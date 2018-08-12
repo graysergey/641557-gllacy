@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Serhii Yushchenko](https://up.htmlacademy.ru/htmlcss/22/user/641557).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Мальнев](https://htmlacademy.ru/profile/fuckomako).
 
 ---
 
