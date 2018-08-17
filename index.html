@@ -9,27 +9,39 @@
       <img src="logo.jpg" width="" height="" alt="Логотип">
       <nav class="main-navigation">
         <ul class="site-navigation">
-          <li> <a href="catalog.html">Каталог</a></li>
-          <li> <a href="shipping_paypent.html">Доставка и оплата</a></li>
-          <li> <a href="about-company.html">О компании</a></li>
+          <li> <a class="nav-item" href="catalog.html">Каталог</a></li>
+          <li> <a class="nav-item" href="shipping_paypent.html">Доставка и оплата</a></li>
+          <li> <a class="nav-item" href="about-company.html">О компании</a></li>
         </ul>
       </nav>
-      <nav class="second-navigation">
-        <ul class="second-navigation-list">
+      <p class="second-menu">
+        <ul class="second-menu-list">
           <li class="search-form"> <!-- форма поиска--> <span class="visually-hidden">поиск</span></li>
           <li class="login-form"> <!-- Форма входа--> <span>Вход</span></li>
           <li class="basket-form"><a href="#">Пусто</a></li>
         </ul>
-      </nav>
+      </p>
       <p class="contacts-in-head">
-        <span>С 10 до 20, ежедневно</span>
-        <span>8 812 450-25-25</span>
+        <p class="time-info-head">С 10 до 20, ежедневно</p>
+        <p class="phone-head"><b>8 812 450-25-25</b></p>
       </p>
     </header>
-    <main class="conteiner">
+    <main class="home-page">
       <h1 class="visually-hidden">Магазин мороженного</h1>
-      <section class="promo">
-        <!--Карусель-->
+      <section class="promo-slider"><!--Карусель (является ли данная картинка смысловой img, или как фоновая?) и будут ли там еще картинки для перелистывания?-->
+        <p>Крем-брюле и пломбир
+          с малиновым джемом</p>
+        <ul class="slider">
+          <li>
+            <button class="slide-1"></button>
+          </li>
+          <li>
+            <button class="slide-2"></button>
+          </li>
+          <li>
+            <button class="slide-3"></button>
+          </li>
+        </ul>
       </section>
       <section class="advantages">
         <h2 class="visually-hidden"> Преимущества</h2>
@@ -47,9 +59,9 @@
               <!--Фон планирую вставить чере css background-->
           </li>
         </ul>
-      </section class="catalog-main">
+      </section>
       
-      <section>
+      <section class="catalog"> <!--Название товара лучше обернуть в label с рисунком?-->
         <h2 class="visualy-hidden">Каталог с мороженным</h2>
         <ul class="catalog-list">
           <li class="catalog-item">
@@ -57,32 +69,32 @@
             <p class="img-item">
               <img src="img/product-1.png" weight="" height="" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
             </p>
-            <p class="coast-item">310 Р<span>/кг</span></p>
+            <p class="coast-item">310 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
             <p class="info-item"><h3>Сливочно-кофейное с кусочками шоколада</h3></p>
             <p class="img-item">
               <img src="img/product-2.png" weight="" height="" alt="Сливочно-кофейное с кусочками шоколада">
             </p>
-            <p class="coast-item">380 Р<span>/кг</span></p>
+            <p class="coast-item">380 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
             <p class="info-item"><h3>Сливочно-клубничное с присыпкой из белого шоколада</h3></p>
             <p class="img-item">
               <img src="img/product-3.png" weight="" height="" alt="Сливочно-клубничное с присыпкой из белого шоколада">
             </p>
-            <p class="coast-item">355 Р<span>/кг</span></p>
+            <p class="coast-item">355 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
             <p class="info-item"><h3>Сливочное крем-брюле с карамельной подливкой</h3></p>
             <p class="img-item">
-              <img src="img/product-3.png" weight="" height="" alt="Сливочное крем-брюле с карамельной подливкой">
+              <img src="img/product-4.png" weight="" height="" alt="Сливочное крем-брюле с карамельной подливкой">
             </p>
-            <p class="coast-item">415 Р<span>/кг</span></p>
+            <p class="coast-item">415 Р<span class="smol-word">/кг</span></p>
           </li>
         </ul>
       </section>
-      <section class="about-us">
+      <section class="about-us"> <!--Как правильно тут вставить иконки? задать для каждой - отдельный контейнер в "p"; или сосздать для каждого "p" - класс и вставить в существующий "p" иконку через css-->
         <h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
         <p>
           Все наше мороженое изготавливается на собственном производстве, с использованием    современного оборудования и проверенных временем технологий.
@@ -97,23 +109,32 @@
             Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.
         </p>
       </section>
-      <section class="banner">
+      <article class="banner">
         <h3>Новое в нашем блоге</h3>
           <p>10 способов сервировки
               фруктовых щербетов к
               столу</p>
+      </article>
+      <form class="subscription" action="https://echo.htmlacademy.ru" method="POST">
+          <label>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) 
+              <input type="text" name="Электронная почта" id="email">
+            </label>
+            <button class="email-send">
+              Отправить
+            </button>
+      </form>
+        <img class="map" src="#" aria-label="Адрес главного офиса
+        и офлайн-магазина"> <!--Нужно ли карту засунуть в select или p? или она имеет право на существование самостоятельно-->
+      <section class="Our contacts">
+        <h2 class="visually-hidden">Наши контакты</h2>
+        <p>Адрес главного офиса и офлайн-магазина:</p>
+        <p><b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
+        <p>Для заказов по телефону:</p>
+        <p><b>8 812 450-25-25</b></p>
+        <p>(с 10 до 20 ежедневно)</p>
       </section>
-      <form class="subscription">
-      <!--Будет форма-->
-      Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) 
-      </form>
-        <img class="map" src="#" alt="Адрес главного офиса
-        и офлайн-магазина">
-      <form class="Feedback">
-        <!--Будет форма с кнопкой-->
-      </form>
     </main>
-    <footer class="last-footer">
+    <footer class="last-footer"> <!--Не уверенн как правильно оформить футер в частности соц сети, и во что обернуть четыре ссылки футера-->
       <ul class="social">
         <li><a href="#" aria-label="Мы в твиттере"></a></li>
         <li><a href="#" aria-label="Мы в инстаграмме"></a></li>
@@ -126,10 +147,9 @@
         <li class="about-company-item"><a href="#" aria-label="Наши документы">Наши документы</a></li>
         <li class="about-company-item"><a href="#" aria-label="Экологические стандарты">Экологические стандарты</a></li>
       </ul>
-    </footer>
-
-    <p> Сделано в HTML Academy © 2017 <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="ссылка на курс академии"></a></p>
-
-    
+      <p>
+        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="ссылка логотип на курс академии"><img src="#"><!--Как правильно оформить и обернуть логотип, и является ли он смысловой картинкой в данном случае?--></a></p>
+        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="ссылка на курс академии">Сделано в HTML Academy © 2017</a></p>
+    </footer>    
   </body>
 </html>
