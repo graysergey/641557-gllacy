@@ -3,35 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="main-page">
     <header class="main-header">
-      <img src="img/svg/logo.svg" width="154px" height="64px" alt="Логотип компании">
       <nav class="main-navigation">
+        <img src="img/svg/logo.svg" width="154px" height="64px" alt="Логотип компании">
         <ul class="site-navigation">
           <li> <a class="nav-item" href="catalog.html">Каталог</a></li>
-          <li> <a class="nav-item" href="shipping_paypent.html">Доставка и оплата</a></li>
-          <li> <a class="nav-item" href="about-company.html">О компании</a></li>
+            <ul class="main-sub-menu">
+              <li><h2 class="novelties">Новинки</h2></li>
+              <li><a href="">Сливочное</a></li>
+              <li><a href="">Щербеты</a></li>
+              <li><a href="">Фруктовый лед</a></li>
+              <li><a href="">Мелорин</a></li>
+            </ul>
+          <li> <a class="nav-item" href="shipping.html">Доставка и оплата</a></li>
+          <li> <a class="nav-item" href="company.html">О компании</a></li>
         </ul>
       </nav>
-      <p class="second-menu">
+      <div class="second-menu">
         <ul class="second-menu-list">
-          <li class="search-form"> <!-- форма поиска--> <span class="visually-hidden">поиск</span></li>
-          <li class="login-form"> <!-- Форма входа--> <span>Вход</span></li>
-          <li class="basket-form"><a href="#">Пусто</a></li>
+          <li class="search-form"><a class="search-link" href="search.html">Поиск</a></li>
+          <li class="login-form"><a class="login-link" href="login.html">Вход</a></li>
+          <li class="basket-form"><a class="basket-link" href="basket.html">Пусто</a></li>
         </ul>
-      </p>
-      <p class="contacts-in-head">
+      </div>
+      <div class="contacts-in-head">
         <p class="time-info-head">С 10 до 20, ежедневно</p>
         <p class="phone-head"><b>8 812 450-25-25</b></p>
-      </p>
+      </div>
     </header>
     <main class="home-page">
+
       <h1 class="visually-hidden">Магазин мороженного</h1>
-      <section class="promo-slider"><!--Карусель (является ли данная картинка смысловой img, или как фоновая?)-->
-        <p>Крем-брюле и пломбир
+
+      <section class="slider">
+        <p class="slider-promo">Крем-брюле и пломбир
           с малиновым джемом</p>
-        <ul class="slider">
+        <ul class="slider-list">
           <li>
             <button class="slide-1"></button>
           </li>
@@ -42,19 +52,21 @@
             <button class="slide-3"></button>
           </li>
         </ul>
+        <a class="button button-slider" href="promo.html" aria-label="Дайте два мороженных">Давайте оба!</a>
       </section>
+
       <section class="advantages">
         <h2 class="visually-hidden"> Преимущества</h2>
         <ul class="advantages-list">
-          <li class="promo-raspberries">
+          <li class="advantages-raspberries">
             <h3>Малина даром</h3>
-              <p class="promo-info">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-              <a class="button-raspberries" href="#">Хочу варенье!</a>
+              <p class="advantages-info">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+              <a class="button raspberries-button" href="raspberries.html" aria-label="получить варенье в подарок">Хочу варенье!</a>
           </li>
-          <li>
+          <li class="advantages-chocolate">
               <h3>Шоколадки даром</h3>
-              <p class="promo-info">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-              <a class="button-raspberries" href="#">Хочу шоколадки!</a>
+              <p class="advantages-info">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+              <a class="button chocolate-button" href="chocolate.html" aria-label="получить шоколад в подарок">Хочу шоколадки!</a>
           </li>
         </ul>
       </section>
@@ -63,91 +75,134 @@
         <h2 class="visualy-hidden">Каталог с мороженным</h2>
         <ul class="catalog-list">
           <li class="catalog-item">
+            <img src="img/product-1.jpg" weight="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            <p class="coast-item">310<span class="smol-word">/кг</span><!--Как сдесь правильно обернуть цену 310 /кг, что бы в дальнейшем их раздвинуть и вставить свг с Рублями?--></p>
             <p class="info-item"><h3>Сливочное с апельсиновым джемом и цитрусовой стружкой</h3></p>
-            <p class="img-item">
-              <img src="img/product-1.jpg" weight="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-            </p>
-            <p class="coast-item">310 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
+            <img src="img/product-2.jpg" weight="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+            <p class="coast-item">380<span class="smol-word">/кг</span></p>
             <p class="info-item"><h3>Сливочно-кофейное с кусочками шоколада</h3></p>
-            <p class="img-item">
-              <img src="img/product-2.jpg" weight="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
-            </p>
-            <p class="coast-item">380 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
+            <img src="img/product-3.jpg" weight="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+            <p class="coast-item">355<span class="smol-word">/кг</span></p>
             <p class="info-item"><h3>Сливочно-клубничное с присыпкой из белого шоколада</h3></p>
-            <p class="img-item">
-              <img src="img/product-3.jpg" weight="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-            </p>
-            <p class="coast-item">355 Р<span class="smol-word">/кг</span></p>
           </li>
           <li class="catalog-item">
-            <p class="info-item"><h3>Сливочное крем-брюле с карамельной подливкой</h3></p>
-            <p class="img-item">
-              <img src="img/product-4.jpg" weight="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
-            </p>
+            <img src="img/product-4.jpg" weight="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
             <p class="coast-item">415 Р<span class="smol-word">/кг</span></p>
+            <p class="info-item"><h3>Сливочное крем-брюле с карамельной подливкой</h3></p>
           </li>
         </ul>
       </section>
-      <section class="about-us"> <!--Как правильно тут вставить иконки? задать для каждой - отдельный контейнер в "p"; или сосздать для каждого "p" - класс и вставить в существующий "p" иконку через css-->
+
+      <section class="about-us">
         <h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
-        <p>
-          Все наше мороженое изготавливается на собственном производстве, с использованием    современного оборудования и проверенных временем технологий.
-        </p>
-        <p>
-          Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья. 
-        </p>
-        <p>
-            Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.
-        </p>
-        <p>
-            Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.
-        </p>
+        <ul> <!--Нормально будет сдесь оформить списком? Не будет ли потом проблем со вставкой свг картинок и смещением текста? Или лучше обернуть каждый абзац в "p" и в общий див?-->
+          <li>Все наше мороженое изготавливается на собственном производстве, с использованием    современного оборудования и проверенных временем технологий.</li>
+          <li>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+          <li>Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+          <li>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+        </ul>
       </section>
+
       <article class="banner">
         <h3>Новое в нашем блоге</h3>
-          <p>10 способов сервировки
-              фруктовых щербетов к
-              столу</p>
+          <p class="paner-info"> <a href="blog.html" aria-label="10 способов сервировки фруктовых щербетов к столу">10 способов сервировки фруктовых щербетов к столу</a></p>
       </article>
-      <form class="subscription" action="https://echo.htmlacademy.ru" method="POST">
-          <label>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) 
-              <input type="text" name="Электронная почта" id="email">
+
+      <section  class="subscription">
+        <h2 class="visually hidden">Пописаться на сладкую рассылку</h2>
+        <form  class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+            <label for="email-subscription">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
             </label>
-            <button class="email-send">
-              Отправить
-            </button>
-      </form>
-        <img class="map" src="img/map.jpg" width="1200px" height="430px" aria-label="Адрес главного офиса
-        и офлайн-магазина">
+              <input class="subscriptio-email" type="email" name="subscription" id="email-subscription" autocomplete="on" placeholder="Электронная почта">
+              <button class="button email-button">
+                Отправить
+              </button>
+        </form>
+      </section>
+
       <section class="Our contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
-        <p>Адрес главного офиса и офлайн-магазина:</p>
-        <p><b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
-        <p>Для заказов по телефону:</p>
-        <p><b>8 812 450-25-25</b></p>
-        <p>(с 10 до 20 ежедневно)</p>
+        <img class="map" src="img/map.jpg" width="1200px" height="430px" aria-label="Карта главного офиса и офлайн-магазина">
+        <div class="contacts-info">
+          <p>Адрес главного офиса и офлайн-магазина:</p>
+          <p><b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
+          <p>Для заказов по телефону:</p>
+          <p><b>8 812 450-25-25</b></p>
+          <p>(с 10 до 20 ежедневно)</p>
+          <button class=" button feedback-button" type="submit">
+            Форма обратной связи
+          </button>
+        </div>
       </section>
     </main>
-    <footer class="page-footer"> <!--Не уверенн как правильно оформить футер в частности соц сети, и во что обернуть четыре ссылки футера-->
-      <ul class="social">
-        <li><a href="#" aria-label="Мы в твиттере"></a></li>
-        <li><a href="#" aria-label="Мы в инстаграмме"></a></li>
-        <li><a href="#" aria-label="Мы в фейсбуке"></a></li>
-        <li><a href="#" aria-label="Мы в вконтакте"></a></li>
+
+    <footer class="footer-page">
+      <ul class="foter-social">
+        <li><a class="social-button" href="#" aria-label="Мы в твиттере">Твиттер</a></li>
+        <li><a class="social-button" href="#" aria-label="Мы в инстаграмме">Инстаграмм</a></li>
+        <li><a class="social-button" href="#" aria-label="Мы в фейсбуке">Фейсбук</a></li>
+        <li><a class="social-button" href="#" aria-label="Мы в вконтакте">Вконтакте</a></li>
       </ul>
-      <ul class="about-company">
-        <li class="about-company-item"><a href="#" aria-label="Для поставщиков">Для поставщиков</a></li>
-        <li class="about-company-item"><a href="#" aria-label="О производстве">О производстве</a></li>
-        <li class="about-company-item"><a href="#" aria-label="Наши документы">Наши документы</a></li>
-        <li class="about-company-item"><a href="#" aria-label="Экологические стандарты">Экологические стандарты</a></li>
+
+      <ul class="foter-about-company">
+        <li class="about-company-item"><a href="suppliers.html" aria-label="Для поставщиков">Для поставщиков</a></li>
+        <li class="about-company-item"><a href="production.html" aria-label="О производстве">О производстве</a></li>
+        <li class="about-company-item"><a href="documents.html" aria-label="Наши документы">Наши документы</a></li>
+        <li class="about-company-item"><a href="stanzas.html" aria-label="Экологические стандарты">Экологические стандарты</a></li>
       </ul>
+
+      <div class="made-in-htmlacademy">
+        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="лендинг интенсива «Профессиональный HTML и CSS, уровень 1»">
+          <p><img src="img/svg/logo-htmlacademy.svg" width="108" height="39" alt="Логотип htmlacademy"></p>
+          <p class="link_htmlacademy">Сделано в HTML Academy © 2017</p>
+        </a>
+      </div>
+    </footer>
+    
+    <section class="modal modal-login">
+      <h2 class="visually-hidden login-form">Форма входа</h2>
       <p>
-        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="ссылка логотип на курс академии"><img src="#"><!--Как правильно оформить и обернуть логотип, и является ли он смысловой картинкой в данном случае?--></a></p>
-        <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="ссылка на курс академии">Сделано в HTML Academy © 2017</a></p>
-    </footer>    
+        <label class="visualy-hidden" for="email-login">Введите электронную почту</label>
+        <input class="modal-login-email" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
+      </p>
+      <p>
+        <label class="visualy-hidden" for="password-login">Введите свой пароль</label>
+        <input class="modal-login-password" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
+      </p>
+      <button class="button" type="submit">Войти</button>
+      <p>
+        <a class="login-info" href="#">Забыли пароль?</a>
+      </p>
+      <p>
+        <a class="login-info" href="#">Новая регистрация</a>
+      </p>
+    </section>
+
+    <section class="modal modal-feedback">
+        <h2 class="feedback-form">Форма входа</h2>
+        <p>
+          <label class="visualy-hidden" for="name-feedback">Введите свое имя</label>
+          <input class="modal-feedback-name" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
+        </p>
+        <p>
+          <label class="visualy-hidden" for="email-feedback">Введите вашу почту для ответа</label>
+          <input class="modal-feedback-email" type="password" name="password-login" id="email-feedback" placeholder="Ваша почта для ответа?" autocomplete="on">
+        </p>
+        <p>
+          <label class="visualy-hidden" for="text-feedback">Напишите что нибудь</label>
+          <textarea class="modal-feedback-text" type="text" name="text-feedback" id="text-feedback" placeholder="Напишите что нибудь..." autocomplete="on" rows="5"></textarea>
+        </p>
+        <button class="button button-feedback" type="submit">Отправить</button>
+      </section>
+
+      <section class="modal modal-searech">
+        <label>
+          <input class="modal-search-input" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
+        </label>
+      </section>
   </body>
 </html>
