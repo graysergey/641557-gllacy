@@ -1,8 +1,484 @@
-
-.main-page {
-    background-color: #849d8f;
+html {
+    margin: 0;
+    padding: 0;
 }
 
-.catalog-page {
-    background-color: #849d8f;
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: #96aca0;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+.main-menu .nav-item {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background-color: #96aca0;
+}
+
+.second-menu-list a {
+    color: #ffffff;
+}
+
+.novelties {
+    color: #323232;
+    font-weight: 700;
+}
+
+.main-submenu a {
+    color: #323232;
+}
+
+.main-submenu {
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #f8f7f4;
+}
+
+.main-submenu a:hover,
+.main-submenu a:focus {
+    background-color: #fbded7;
+}
+
+.main-submenu a:active {
+    background-color: #f6b5a5;
+}
+
+.main-menu,
+.main-submenu,
+.second-menu-list,
+.slider-list,
+.advantages-list,
+.catalog-list,
+.about-us-items,
+.foter-social,
+.foter-about-company {
+    list-style: none;
+}
+
+.main-menu-focus .nav-item1{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background-color: #96aca0;
+}
+
+.main-menu-focus .nav-item1:hover,          /*поменять радиус и задать габариты кнопки*/
+.main-menu-focus .nav-item1:focus {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    border-radius: 30px; 
+    color: #333333;
+    background-color: #f7f6f3;
+    /* outline: 1 px solid #ffffff; снял стиль в фотошопе, но он не похож на макет*/
+}
+
+.main-menu-focus .nav-item1:active {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    border-radius: 30px; 
+    color: #333333;
+    background-color: #f7f6f3;
+    box-shadow: inset 0px 0px 1px 2px #696969;
+}
+
+.second-menu-list a {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 9px 16px;
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.second-menu-list a:hover,
+.second-menu-list a:focus {
+    color: #323232;
+    background-color: #f8f7f4;
+}
+
+.time-info-head {
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    background-color: #96aca0;
+
+}
+
+.phone-head {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #96aca0;
+}
+
+.slider-promo {
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #96aca0; /*проверить фон после вставки изображений, и перелистывания слайдов*/
+}
+
+.slide-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.slide-btn:hover, 
+.slide-btn:focus {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background-color: rgba(255,255,255,0.4)
+}
+
+.slide-btn:active {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/*кнопки - подправить размеры*/
+.button {
+    font: inherit;
+
+    text-align: center;
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 44px;
+    color: #ffffff;
+    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
+    background: linear-gradient(to top, #e74a35, #f26843);
+    border: none;
+}
+
+.button:hover,
+.button:focus {  /* как задать кнопкам color-overlay 20% по стилизации из макета(фотошопа)*/
+    color: #ffffff;
+    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
+    background: #f17c64;
+    box-shadow: 0px 2px 0px 2px #ac1000;                  /*правильно получилось снять параметры тени кнопки? потому что есть отличие от макета*/
+}
+
+.button:active {
+    color: #ffffff;
+    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
+    background: linear-gradient(to bottom, #f26843, #e74a35);
+    box-shadow: inset 0px 2px 0px 2px #942718;
+}
+
+.advantages-raspberries h3,
+.advantages-chocolate h3 {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #96aca0;
+}
+
+.advantages-info {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #96aca0;
+}
+
+.info-item {
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+catalog-item .info-item:hover {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.catalog-image {         /*как правыильно оформить карточку товара в html что бы нормальрно стилизовать в css? Какие части в карточке товара должны быть ссылками?*/
+    border-radius: 50%;
+}
+
+.coast-item {
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 700;
+}
+
+.coast-item span {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 700;
+}
+
+.about-us h2 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #323232;
+}
+
+.about-us {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #323232;
+    background-color: #ede1c7;
+    background-image: url("img/about-us.jpg"); /* как тут парвильно вставить повторяющуюся фоновую картинку?*/
+}
+
+.banner h3 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323232;
+    background-color: #ffffff;
+}
+
+.banner-info a {
+    font-size: 24px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #323232;
+    background-color: #ffffff;
+    border-bottom: 2px solid #323232;
+}
+
+.banner-info a:hover,
+.banner-info a:focus {
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+
+.banner {
+    box-sizing: border-box;
+    border: 6px solid #ffffff;
+    background-color: #ffffff;
+    background-image: url("img/strawberry.jpg"); /*не вставляется воновая картинка*/
+    
+}
+
+.subscription {
+    color: #5a5a5a;
+    background-color: #f8f7f4;
+}
+
+.contacts-info {
+    color: #323232;
+    background-color: #fefefe;
+}
+
+.contacts-info :nth-child(1n){
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+}
+
+.contacts-info :nth-child(2n){
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.about-company-item a {
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.about-company-item a:hover,
+.about-company-item a:focus {
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+.link_htmlacademy {
+    color: #ffffff;
+}
+
+.link_htmlacademy span {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.link_htmlacademy:hover,
+.link_htmlacademy:focus {
+    border-bottom: none; /*как скрыть при наведении белое подчеркивание? (ссылка на академию)*/
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+.made-in-htmlacademy:hover,
+.made-in-htmlacademy:focus {
+    border: none;  /*как скрыть при наведении белое подчеркивание?(логотип академии)*/
+}
+
+.modal {
+    color: #323232;
+    background-color: #f8f7f4;
+}
+
+.login-info {
+    color:#323232;
+    border-bottom: 1px solid rgba(50,50,50,0.3);
+}
+
+.feedback-form p:nth-of-type(1) {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.input {
+    font: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(178,178,178,0.52)
+}
+
+.input:hover {
+    font: inherit;
+    background-color: #ffffff;
+    border: 2px solid rgba(178,178,178,0.52)
+}
+
+.input:focus {
+    font: inherit;
+    background-color: #ffffff;
+    border: 2px solid rgba(46,136,228,0.52)
+}
+
+.input:active {  /*Нормально оформлены инпуты? при активном сосстоянии обводка жирнее чем на макете, хотя параметры такие же как в фотошопе*/
+    font: inherit;
+    background-color: #ffffff;
+    border: 1px solid rgba(178,178,178,0.52)
+}
+/*  --------------------    Дополнительные стили для страницы каталога   ---------------------  */
+
+.main-menu-active .nav-item1 {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #d07058;
+}
+
+.basket-form-catalog a {
+    font-size: 14px;
+    line-height: 16px;
+    color: #323232;
+    background-color: #f7f6f3;
+}
+
+.breadcrumbs {
+    list-style: none;
+}
+
+.breadcrumbs a {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background-color: #96aca0;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+    background-color: #96aca0;
+}
+
+h1.cream {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
+}
+
+h2.filters-sorting {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+}
+
+.button-filters {
+    font: inherit;
+
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.2);
+    outline: 2px solid #ffffff;
+}
+
+.button-filters:hover,
+.button-filters:focus { 
+    color: #323232;
+    background-color: #ffffff;
+}
+
+.button-filters:active {
+    color: #333333;
+    background-color: #eaeaea;
+    box-shadow: inset 0px 0px 1px 2px #696969;
+}
+
+.pagination-list {
+    list-style: none;
+}
+
+.pagination-list a {
+    color: #ffffff;
+    background-color: #96aca0;
+}
+
+pagination-item1 a {  /*как беребить по важности предидущий селектор?*/
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /*почему 50% радиуса делает каждый елемент пагинатора овальным, а не круглым?*/
+    color: #323232;
+    background-color: #ffffff;
+}
+
+.item-info span {
+    color: #999999;
+    background-color: #f8f7f4;
+}
+
+
+/* Состояние елементов филтров прописывать стилями, или вставлять свг картинки? */
+  
