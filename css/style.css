@@ -1,8 +1,7 @@
-html {
-    margin: 0;
-    padding: 0;
-}
-
+/* 
+Не понимаю расчет flex-grow, и flex-shrink. Не понимаю от куда в расчете появляется "flex-grow всех элементов" (от куда ее взять, что бы высчитать формулу);
+ */
+html,
 body {
     margin: 0;
     padding: 0;
@@ -25,41 +24,20 @@ a:focus {
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-.main-menu .nav-item {
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    background-color: #96aca0;
-}
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
 
-.second-menu-list a {
-    color: #ffffff;
-}
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-.novelties {
-    color: #323232;
-    font-weight: 700;
-}
+  white-space: nowrap;
 
-.main-submenu a {
-    color: #323232;
-}
-
-.main-submenu {
-    font-size: 14px;
-    line-height: 16px;
-    background-color: #f8f7f4;
-}
-
-.main-submenu a:hover,
-.main-submenu a:focus {
-    background-color: #fbded7;
-}
-
-.main-submenu a:active {
-    background-color: #f6b5a5;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .main-menu,
@@ -72,9 +50,24 @@ a:focus {
 .foter-social,
 .foter-about-company {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.main-menu-focus .nav-item1{
+.main-header {
+    display: flex;
+    min-height: 113px;
+    max-width: 1200px;
+}
+
+.main-menu {
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+}
+
+.main-menu .nav-item {
+    margin-right: 28px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
@@ -83,28 +76,97 @@ a:focus {
     background-color: #96aca0;
 }
 
-.main-menu-focus .nav-item1:hover,          /*поменять радиус и задать габариты кнопки*/
+.main-menu-focus .nav-item1{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background-color: transparent;
+}
+
+.main-menu-focus .nav-item1:hover,
 .main-menu-focus .nav-item1:focus {
+    display: inline-block;
+    margin-left: -13px;
+    margin-right: -13px;
+    padding: 7px 13px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
     border-radius: 30px; 
     color: #333333;
     background-color: #f7f6f3;
-    /* outline: 1 px solid #ffffff; снял стиль в фотошопе, но он не похож на макет*/
 }
 
 .main-menu-focus .nav-item1:active {
+    display: inline-block;
+    margin-left: -13px;
+    margin-right: -13px;
+    padding: 7px 13px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
     border-radius: 30px; 
     color: #333333;
-    background-color: #f7f6f3;
-    box-shadow: inset 0px 0px 1px 2px #696969;
+    background-color: #ededed;
+    box-shadow: inset 0px 2px 2px 0px #696969;
+}
+
+.nav-img {
+    margin-right: 28px;
 }
 
 .second-menu-list a {
+    color: #ffffff;
+}
+ 
+.main-submenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 5px;
+    margin-left: -21px;
+    padding: 0;
+    box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    background-color: #f8f7f4;
+}
+
+.novelties {
+    color: #323232;
+    font-weight: 700;
+    padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.main-submenu a {
+    display: block;
+    align-items: center;
+    color: #323232;
+    padding-left: 21px;
+    padding-bottom: 15px;
+    padding-right: 21px;
+}
+
+.main-submenu a:hover,
+.main-submenu a:focus {
+    background-color: #fbded7;
+}
+
+.main-submenu a:active {
+    color: #ffffff;
+    background-color: #f6b5a5;
+}
+
+.main-submenu li:nth-child(1) {
+    padding-top: 11px; 
+}
+
+.second-menu-list a {
+    display: inline-block;
     font-size: 14px;
     line-height: 16px;
     padding: 9px 16px;
@@ -114,8 +176,18 @@ a:focus {
 
 .second-menu-list a:hover,
 .second-menu-list a:focus {
+    border: none;
     color: #323232;
     background-color: #f8f7f4;
+}
+
+.search-form a { 
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
 }
 
 .time-info-head {
@@ -134,64 +206,131 @@ a:focus {
     background-color: #96aca0;
 }
 
-.slider-promo {
+.slider {
+    min-height: 535px;
+    width: 1146px;
+    padding-left: 27px;
+    padding-right: auto;
+}
+
+.slider h2 {
     font-size: 60px;
     line-height: 60px;
     font-weight: 700;
+    width: 670px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 283px;
     color: #ffffff;
     background-color: #96aca0; /*проверить фон после вставки изображений, и перелистывания слайдов*/
 }
 
+.slider-list {
+    display: flex;
+    margin-top: 43px;
+}
+
 .slide-btn {
-    width: 20px;
-    height: 20px;
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
     border-radius: 50%;
     background-color: #ffffff;
+    border: none;
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 .slide-btn:hover, 
 .slide-btn:focus {
-    width: 20px;
-    height: 20px;
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
     border-radius: 50%;
-    border: 2px solid #ffffff;
-    background-color: rgba(255,255,255,0.4)
-}
-
-.slide-btn:active {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #ffffff;
-}
-
-/*кнопки - подправить размеры*/
-.button {
-    font: inherit;
-
-    text-align: center;
-    vertical-align: middle;
-    font-size: 32px;
-    line-height: 44px;
-    color: #ffffff;
-    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
-    background: linear-gradient(to top, #e74a35, #f26843);
+    box-shadow: 0 0 0 2px #ffffff;
+    background-color: rgba(255,255,255,0.4);
     border: none;
 }
 
-.button:hover,
-.button:focus {  /* как задать кнопкам color-overlay 20% по стилизации из макета(фотошопа)*/
+.slide-btn:active {
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 0 0 2px #ffffff;
+}
+
+a .button-slider {
+    font-size: 32px;
+    height: 44px;
+}
+
+.slider-list a {
+    margin-top: -43px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    font: inherit;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 9px 41px;
     color: #ffffff;
-    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
-    background: #f17c64;
-    box-shadow: 0px 2px 0px 2px #ac1000;                  /*правильно получилось снять параметры тени кнопки? потому что есть отличие от макета*/
+    text-shadow: 0px 2px 5px rgba(160,32,11,0.75);
+    background: linear-gradient(to top, #e74a35, #f26843);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 1px 1px 1px #ac1000;
+}
+
+.button:hover,
+.button:focus {
+    outline: none;
+    color: #ffffff;
+    text-shadow: 0px 2px 5px rgb(160, 32, 11);
+    background: #ef7762;
+    box-shadow: 0 1px 1px 1px #ac1000;
+    border: none;
 }
 
 .button:active {
+    outline: none;
     color: #ffffff;
-    text-shadow: 2px 0px 5px rgba(160,32,11,0.75);
-    background: linear-gradient(to bottom, #f26843, #e74a35);
-    box-shadow: inset 0px 2px 0px 2px #942718;
+    text-shadow: 0px 2px 5px rgb(160, 32, 11);
+    background: linear-gradient(to bottom, #d74632, #e1613e);
+    box-shadow: inset 0px 2px 1px 1px #942718;
+    border: none;
+}
+
+/* как переопределить размер шрифта предидущего селектора?  И задавать ли для всех кнопок разные внутренние отступы? */
+
+.advantages-raspberries {
+    width: 560px;
+    min-height: 229px;
+    background-image: url("../img/crimson-background.jpg");
+    border: none;
+    border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
+}
+
+.advantages-chocolate {
+    width: 560px;
+    min-height: 229px;
+    background-image: url("../img/chocolate-background.jpg");
+    border: none;
+    border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
+}
+
+.advantages-raspberries p,
+.advantages-chocolate p {
+    background: transparent;
 }
 
 .advantages-raspberries h3,
@@ -200,7 +339,7 @@ a:focus {
     line-height: 41px;
     font-weight: 700;
     color: #ffffff;
-    background-color: #96aca0;
+    background-color: transparent;
 }
 
 .advantages-info {
@@ -211,19 +350,34 @@ a:focus {
     background-color: #96aca0;
 }
 
-.info-item {
+.info-item a {
+    color: #ffffff;
     font-size: 16px;
     line-height: 22px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-catalog-item .info-item:hover {
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+.info-item a:hover,
+.info-item a:focus {
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+    font-size: 16px;
+    line-height: 22px;
 }
 
-.catalog-image {         /*как правыильно оформить карточку товара в html что бы нормальрно стилизовать в css? Какие части в карточке товара должны быть ссылками?*/
+.bottom-pointing {
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 22px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.catalog-item-image img { 
     border-radius: 50%;
+}
+
+.catalog-item-image a {
+    border: none;
 }
 
 .coast-item {
@@ -238,6 +392,17 @@ catalog-item .info-item:hover {
     font-weight: 700;
 }
 
+.about-us {
+    width: 1146px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #323232;
+    background-color: #ede1c7;
+    background-image: url("../img/about-us.jpg");
+    border-radius: 15px;
+}
+
 .about-us h2 {
     font-size: 24px;
     line-height: 30px;
@@ -245,13 +410,13 @@ catalog-item .info-item:hover {
     color: #323232;
 }
 
-.about-us {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: normal;
-    color: #323232;
-    background-color: #ede1c7;
-    background-image: url("img/about-us.jpg"); /* как тут парвильно вставить повторяющуюся фоновую картинку?*/
+.banner {  
+    width: 560px;
+    height: 220px;
+    background-color: #ffffff;
+    background-image: url("../img/strawberry.jpg");
+    background-repeat: no-repeat;
+    border-radius: 15px;
 }
 
 .banner h3 {
@@ -260,6 +425,9 @@ catalog-item .info-item:hover {
     font-weight: 400;
     color: #323232;
     background-color: #ffffff;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
 }
 
 .banner-info a {
@@ -267,7 +435,7 @@ catalog-item .info-item:hover {
     line-height: 23px;
     font-weight: 700;
     color: #323232;
-    background-color: #ffffff;
+    background: transparent;
     border-bottom: 2px solid #323232;
 }
 
@@ -277,18 +445,24 @@ catalog-item .info-item:hover {
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-
-.banner {
-    box-sizing: border-box;
-    border: 6px solid #ffffff;
-    background-color: #ffffff;
-    background-image: url("img/strawberry.jpg"); /*не вставляется воновая картинка*/
-    
-}
-
 .subscription {
+    width: 550px;
+    height: 210px;
     color: #5a5a5a;
     background-color: #f8f7f4;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    border-image-source: url("../img/svg/bg-post.svg");
+    border-image-slice: 5;
+    border-image-repeat: round;
+    /* background-clip: content-box;  (хотел убрать в углах рамки еффект 90градусов. Как правильно задать параметры фоновой рамки, что бы углы были с нормальным радиусом?*/
+}
+
+.our-contacts {
+    max-width: 302px;
+    min-height: 305px;
+    border-radius: 15px;
+    /* Блок контактов тип блока section (над картой) не реагирует на минимальную высоту и радиус, что это может быить? */
 }
 
 .contacts-info {
@@ -329,22 +503,20 @@ catalog-item .info-item:hover {
 .link_htmlacademy span {
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
+/* Как правильно сделать что бы белая линия подчеркивания "span" предидущего селектора скрывалась при наведении на всю ссылку, а не только при наведении на span? */
+.link_htmlacademy span:hover,
+.link_htmlacademy span:focus{
+    border-bottom: none;
+}
 
 .link_htmlacademy:hover,
 .link_htmlacademy:focus {
-    border-bottom: none; /*как скрыть при наведении белое подчеркивание? (ссылка на академию)*/
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-.made-in-htmlacademy:hover,
-.made-in-htmlacademy:focus {
-    border: none;  /*как скрыть при наведении белое подчеркивание?(логотип академии)*/
-}
-
-.modal {
-    color: #323232;
-    background-color: #f8f7f4;
+.made-in-htmlacademy a:nth-child(1) {
+    border-bottom: none;
 }
 
 .login-info {
@@ -361,27 +533,27 @@ catalog-item .info-item:hover {
 .input {
     font: inherit;
     background-color: #ffffff;
-    border: 1px solid rgba(178,178,178,0.52)
+    border: 1px solid rgba(178,178,178,0.52);
+    border-radius: 5px;
 }
 
 .input:hover {
     font: inherit;
     background-color: #ffffff;
-    border: 2px solid rgba(178,178,178,0.52)
+
+    border: 1px solid rgba(178,178,178,0.52);
+    box-shadow: 0px 0px 0px 2px rgba(154, 154, 154, 0.52);
 }
 
 .input:focus {
     font: inherit;
     background-color: #ffffff;
-    border: 2px solid rgba(46,136,228,0.52)
+
+    border: 1px solid rgba(178,178,178,0.52);
+    /* box-shadow: 0px 0px 0px 20px rgba(46,136,228,0.52); */
 }
 
-.input:active {  /*Нормально оформлены инпуты? при активном сосстоянии обводка жирнее чем на макете, хотя параметры такие же как в фотошопе*/
-    font: inherit;
-    background-color: #ffffff;
-    border: 1px solid rgba(178,178,178,0.52)
-}
-/*  --------------------    Дополнительные стили для страницы каталога   ---------------------  */
+/*          ----------          Дополнительные стили для страницы каталога          ----------          */
 
 .main-menu-active .nav-item1 {
     font-size: 16px;
@@ -435,26 +607,32 @@ h2.filters-sorting {
 
 .button-filters {
     font: inherit;
-
     text-align: center;
     vertical-align: middle;
     font-size: 16px;
     line-height: 18px;
+    min-height: 36px;
+    padding: 7px 28px;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
-    outline: 2px solid #ffffff;
+    box-shadow:  0px 0px 0px 2px #ffffff;
+    border-radius: 15px;
+    border: none;
+
 }
 
 .button-filters:hover,
 .button-filters:focus { 
     color: #323232;
     background-color: #ffffff;
+    border: none;
 }
 
 .button-filters:active {
     color: #333333;
     background-color: #eaeaea;
-    box-shadow: inset 0px 0px 1px 2px #696969;
+    box-shadow: inset 0px 2px 2px 0px #696969;
+    border: none;
 }
 
 .pagination-list {
@@ -466,7 +644,8 @@ h2.filters-sorting {
     background-color: #96aca0;
 }
 
-pagination-item1 a {  /*как беребить по важности предидущий селектор?*/
+pagination-item1 a {
+    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%; /*почему 50% радиуса делает каждый елемент пагинатора овальным, а не круглым?*/
@@ -479,6 +658,31 @@ pagination-item1 a {  /*как беребить по важности преди
     background-color: #f8f7f4;
 }
 
-
 /* Состояние елементов филтров прописывать стилями, или вставлять свг картинки? */
-  
+
+/* Окно поиска в фотошоп макете при наведении сьезжает влево. Так и должно быть? */
+
+/*          ----------          Стилизация модальных окон          ----------          */
+
+.modal {
+    color: #323232;
+    background-color: #f8f7f4;
+}
+
+.modal-login {
+    max-width: 277px;
+    min-height: 214px;
+    border-radius: 5px;
+}
+
+.modal-feedback {
+    max-width: 447px;
+    min-height: 442px;
+    border-radius: 10px;
+}
+
+.modal-search {
+    max-width: 341px;
+    min-height: 84px;
+    border-radius: 5px;
+}

@@ -10,9 +10,9 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-        <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип компании">
         <ul class="main-menu">
-          <li class="main-menu-focus"> <a class="nav-item1" href="sherbet.html">Каталог</a>
+          <li><img class="nav-img" src="img/svg/logo.svg" width="154" height="64" alt="Логотип компании"></li>
+          <li class="nav-item main-menu-focus"> <a class="nav-item1" href="sherbet.html">Каталог</a>
             <ul class="main-submenu">
               <li class="novelties">Новинки</li>
               <li><a href="">Сливочное</a></li>
@@ -42,7 +42,7 @@
       <h1 class="visually-hidden">Магазин мороженного</h1>
 
       <section class="slider">
-        <h2 class="slider-promo">Крем-брюле и пломбир
+        <h2>Крем-брюле и пломбир
           с малиновым джемом</h2>
         <ul class="slider-list">
           <li>
@@ -77,26 +77,55 @@
       <section class="catalog">
         <h2 class="visualy-hidden">Каталог с мороженным</h2>
         <ul class="catalog-list">
+
           <li class="catalog-item">
-            <img class="catalog-image" src="img/product-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            <div class="catalog-item-image"> 
+              <a href="#"> 
+                <img src="img/product-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                <!-- картинка хит -->
+              </a>
+            </div>
             <div class="coast-item">310<span class="smol-word">/кг</span></div>
-            <div><h3 class="info-item">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3></div>
+            <h3 class="info-item"><a href="#"> Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+            <a class="bottom bottom-pointing" href="#" aria-label="Быстрый просмотр">Быстрый просмотр</a>
           </li>
+
           <li class="catalog-item">
-            <img class="catalog-image" src="img/product-2.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+            <div class="catalog-item-image">
+              <a href="#">
+                <img class="catalog-image" src="img/product-2.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+                <!-- картинка хит -->
+              </a>
+            </div>
             <div class="coast-item">380<span class="smol-word">/кг</span></div>
-            <div><h3 class="info-item">Сливочно-кофейное с кусочками шоколада</h3></div>
+            <h3 class="info-item"><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
+            <a class="bottom bottom-pointing" href="#" aria-label="Быстрый просмотр">Быстрый просмотр</a>
           </li>
+
           <li class="catalog-item">
-            <img class="catalog-image" src="img/product-3.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+            <div class="catalog-item-image">
+              <a href="#">
+                <img class="catalog-image" src="img/product-3.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                <!-- картинка хит -->
+              </a>
+            </div>
             <div class="coast-item">355<span class="smol-word">/кг</span></div>
-            <div><h3 class="info-item">Сливочно-клубничное с присыпкой из белого шоколада</h3></div>
+            <h3 class="info-item"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
+            <a class="bottom bottom-pointing" href="#" aria-label="Быстрый просмотр">Быстрый просмотр</a>
           </li>
+
           <li class="catalog-item">
-            <img class="catalog-image" src="img/product-4.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+            <div class="catalog-item-image">
+              <a href="#">
+                <img class="catalog-image" src="img/product-4.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+                <!-- картинка хит -->
+              </a>
+            </div>
             <div class="coast-item">415 Р<span class="smol-word">/кг</span></div>
-            <div><h3 class="info-item">Сливочное крем-брюле с карамельной подливкой</h3></div>
+            <h3 class="info-item"><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
+            <a class="bottom bottom-pointing" href="#" aria-label="Быстрый просмотр">Быстрый просмотр</a>
           </li>
+
         </ul>
       </section>
 
@@ -127,7 +156,7 @@
         </form>
       </section>
 
-      <section class="Our contacts">
+      <section class="our-contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <img class="map" src="img/map.jpg" width="1200" height="430" alt="Карта главного офиса и офлайн-магазина">
         <div class="contacts-info">
@@ -145,10 +174,10 @@
 
     <footer class="footer-page">
       <ul class="foter-social">
-        <li><a class="social-button" href="#" aria-label="Мы в твиттере">Твиттер</a></li>
-        <li><a class="social-button" href="#" aria-label="Мы в инстаграмме">Инстаграмм</a></li>
-        <li><a class="social-button" href="#" aria-label="Мы в фейсбуке">Фейсбук</a></li>
-        <li><a class="social-button" href="#" aria-label="Мы в вконтакте">Вконтакте</a></li>
+        <li><a class="social-button visually-hidden" href="#" aria-label="Мы в твиттере">Твиттер</a></li>
+        <li><a class="social-button visually-hidden" href="#" aria-label="Мы в инстаграмме">Инстаграмм</a></li>
+        <li><a class="social-button visually-hidden" href="#" aria-label="Мы в фейсбуке">Фейсбук</a></li>
+        <li><a class="social-button visually-hidden" href="#" aria-label="Мы в вконтакте">Вконтакте</a></li>
       </ul>
 
       <ul class="foter-about-company">
@@ -211,7 +240,7 @@
       <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
         <h2 class="visually-hidden">Окно поиска</h2>
         <label>
-          <input class="modal-search-input" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
+          <input class="input modal-search-input" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
         </label>
       </form>
     </section>
