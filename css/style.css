@@ -16,6 +16,11 @@ body {
     background-image: url("../gllacy-index-1200.jpg");
     background-size: 1200px auto;
     background-repeat: no-repeat;
+
+    /* background-image: url("../gllacy-catalog-1200.jpg");
+    background-size: 1200px auto;
+    background-repeat: no-repeat;
+ */
 }
 
 a {
@@ -84,7 +89,7 @@ a:focus {
     font-weight: 400;
     color: #ffffff;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    background-color: #96aca0;
+    background-color: transparent;
 }
 
 .main-menu-focus .nav-item1{
@@ -590,7 +595,7 @@ a .button-slider {
     flex-direction: row;
     width: 1200px;
     min-height: 103px;
-    /* background-color: #849d8f; */
+    background-color: #849d8f;
 }
 
 .about-company-item a {
@@ -769,10 +774,6 @@ pagination-item1 a {
     background-color: #f8f7f4;
 }
 
-/* Состояние елементов филтров прописывать стилями, или вставлять свг картинки? */
-
-/* Окно поиска в фотошоп макете при наведении сьезжает влево. Так и должно быть? */
-
 /*          ----------          Стилизация модальных окон          ----------          */
 
 .modal {
@@ -781,19 +782,30 @@ pagination-item1 a {
 }
 
 .modal-login {
-    max-width: 277px;
-    min-height: 214px;
+    position: absolute;
+    width: 277px;
+    height: 214px;
+    margin-top: -2350px;
+    margin-left: 771px;
     border-radius: 5px;
+    box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
 }
 
 .modal-feedback {
-    max-width: 447px;
-    min-height: 442px;
+    position: absolute;
+    width: 447px;
+    height: 442px;
+    margin-top: -2079px;
+    margin-left: 363px;
     border-radius: 10px;
 }
 
 .modal-search {
-    max-width: 341px;
-    min-height: 84px;
+    position: absolute;
+    width: 341px;
+    height: 84px;
+    margin-top: -2350px;
+    margin-left: 603px;
     border-radius: 5px;
+    box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
 }
