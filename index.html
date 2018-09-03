@@ -10,10 +10,10 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
+        <img class="nav-img" src="img/svg/logo.svg" width="154" height="64" alt="Логотип компании">
         <ul class="main-menu">
-          <li><img class="nav-img" src="img/svg/logo.svg" width="154" height="64" alt="Логотип компании"></li>
-          <li class="nav-item main-menu-focus"> <a class="nav-item1" href="sherbet.html">Каталог</a>
-            <ul class="main-submenu">
+          <li class="main-menu-focus"> <a class="nav-item1" href="sherbet.html">Каталог</a>
+            <ul class="main-submenu visually-hidden">
               <li class="novelties">Новинки</li>
               <li><a href="">Сливочное</a></li>
               <li><a href="">Щербеты</a></li>
@@ -25,13 +25,11 @@
           <li> <a class="nav-item" href="company.html">О компании</a></li>
         </ul>
       </nav>
-      <div class="second-menu">
-        <ul class="second-menu-list">
-          <li class="search-form"><a href="search.html" aria-label="Поиск"></a></li>
-          <li class="login-form"><a href="login.html">Вход</a></li>
-          <li class="basket-form"><a href="basket.html">Пусто</a></li>
-        </ul>
-      </div>
+      <ul class="second-menu-list">
+        <li class="search-form"><a href="search.html" aria-label="Поиск"></a></li>
+        <li class="login-form"><a href="login.html">Вход</a></li>
+        <li class="basket-form"><a href="basket.html">Пусто</a></li>
+      </ul>
       <div class="contacts-in-head">
         <p class="time-info-head">С 10 до 20, ежедневно</p>
         <p class="phone-head"><b>8 812 450-25-25</b></p>
@@ -55,27 +53,29 @@
             <button type="button" class="slide-btn"></button>
           </li>
         </ul>
-        <a class="button button-slider" href="promo.html" aria-label="Дайте два мороженных">Давайте оба!</a>
+        <div class="box-for-btn">
+          <a class="button button-slider" href="promo.html" aria-label="Дайте два мороженных">Давайте оба!</a>
+        </div>
       </section>
 
-      <section class="advantages">
+      <section> <!--Не лишний ли это блок секшн? (Он обьеденяет два верхних банера) И он не пригодился при стилизации. Может удалить его и заголовок вставить в ul?-->
         <h2 class="visually-hidden"> Преимущества</h2>
         <ul class="advantages-list">
           <li class="advantages-raspberries">
-            <h3>Малина даром</h3>
-              <p class="advantages-info">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-              <a class="button raspberries-button" href="raspberries.html" aria-label="получить варенье в подарок">Хочу варенье!</a>
+          <h3>Малина даром</h3>
+            <p class="advantages-info">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+            <a class="button raspberries-button" href="raspberries.html" aria-label="получить варенье в подарок">Хочу варенье!</a>
           </li>
           <li class="advantages-chocolate">
-              <h3>Шоколадки даром</h3>
-              <p class="advantages-info">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-              <a class="button chocolate-button" href="chocolate.html" aria-label="получить шоколад в подарок">Хочу шоколадки!</a>
+            <h3>Шоколадки даром</h3>
+            <p class="advantages-info">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+            <a class="button chocolate-button" href="chocolate.html" aria-label="получить шоколад в подарок">Хочу шоколадки!</a>
           </li>
         </ul>
       </section>
       
       <section class="catalog">
-        <h2 class="visualy-hidden">Каталог с мороженным</h2>
+        <h2 class="visually-hidden">Каталог с мороженным</h2>
         <ul class="catalog-list">
 
           <li class="catalog-item">
@@ -139,22 +139,24 @@
         </ul>
       </section>
 
-      <article class="banner">
-        <h3>Новое в нашем блоге</h3>
-          <p class="banner-info"> <a href="blog.html" aria-label="10 способов сервировки фруктовых щербетов к столу">10 способов сервировки фруктовых щербетов к столу</a></p>
-      </article>
+      <div class="box-for-baners">
+        <article class="banner">
+          <h3>Новое в нашем блоге</h3>
+            <p class="banner-info"> <a href="blog.html" aria-label="10 способов сервировки фруктовых щербетов к столу">10 способов сервировки фруктовых щербетов к столу</a></p>
+        </article>
 
-      <section  class="subscription">
-        <h2 class="visually hidden">Пописаться на сладкую рассылку</h2>
-        <form  class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
-            <label for="email-subscription">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
-            </label>
+        <section  class="subscription">
+          <h2 class="visually hidden">Пописаться на сладкую рассылку</h2>
+          <form  class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+              <label for="email-subscription">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
+              </label>
               <input class="input subscription-email" type="email" name="subscription" id="email-subscription" autocomplete="on" placeholder="Электронная почта">
               <button class="button email-button">
                 Отправить
               </button>
-        </form>
-      </section>
+          </form>
+        </section>
+      </div>
 
       <section class="our-contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
