@@ -13,10 +13,10 @@ body {
     color: #ffffff;
     background-color: #96aca0;
 
-    background-image: url("../gllacy-index-1200.jpg");
+    /* background-image: url("../gllacy-index-1200.jpg");
     background-size: 1200px auto;
     background-repeat: no-repeat;
-
+ */
     /* background-image: url("../gllacy-catalog-1200.jpg");
     background-size: 1200px auto;
     background-repeat: no-repeat;
@@ -177,7 +177,6 @@ a:focus {
     display: flex;
     flex-direction: column;
     position: absolute;
-    max-width: ;
     font-size: 14px;
     line-height: 16px;
     margin-top: 5px;
@@ -319,7 +318,6 @@ a .button-slider {
 
 /* как переопределить размеры стоковых кнопок для всего сайта, делать ли их все разными по размерам горизонтальных паддингов, как на макете? */
 .box-for-btn {
-    margin-top:;
     margin-left: auto;
     margin-right: auto;
 }
@@ -362,6 +360,7 @@ a .button-slider {
     display: flex;
     flex-direction: row;
     padding-left: 27px;
+    margin-bottom: 40px;
 }
 
 .advantages-raspberries {
@@ -403,11 +402,6 @@ a .button-slider {
     background-color: #96aca0;
 }
 
-.catalog-list {
-    display: flex;
-    min-height: 402px;
-}
-
 .catalog,
 .catalog-list,
 .catalog-item,
@@ -418,20 +412,88 @@ a .button-slider {
 }
 
 .catalog-list {
-    margin-left: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 14px;
+    min-height: 402px;
 }
 
 .catalog-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 293px;
     min-height: 361px;
-    padding-top: 40px;
 }
 
+.catalog-item-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.catalog-item-image img {
+    border-radius: 50%;
+}
+
+.catalog-item-image a {
+    align-content: center;
+    border: none;
+    border-radius: 50%;
+}
+
+.catalog-item::before {
+    content: "";
+    position: absolute;
+    width: 61px;
+    height: 61px;
+    margin-left: 13px;
+    background-image: url("../img/svg/hit.svg");
+}
+
+.coast-item {
+    position: absolute;
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 500;
+    margin-top: 209px;
+    margin-left: 12px;
+}
+
+.coast-item span {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 700;
+    margin-left: 37px;
+}
+
+.coast-item::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 31px;
+    margin-left: -73px;
+    margin-top: 8px;
+    background-image: url("../img/svg/ruble.svg");
+}
+
+.info-item {
+    max-width: 255px;
+    margin-top: -10px;
+}
 
 .info-item a {
-    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+}
+
+.info-item a {
+    max-width: 255px;
     font-size: 16px;
     line-height: 22px;
+    font-weight: normal;
+    text-align: center;
+    color: #ffffff;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -444,33 +506,12 @@ a .button-slider {
 }
 
 .bottom-pointing {
-        color: #ffffff;
-        font-size: 16px;
-        line-height: 22px;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.catalog-item-image img { 
-    border-radius: 50%;
-}
-
-.catalog-item-image a {
-    border: none;
-}
-
-.coast-item {
-    position: absolute;
-    font-size: 45px;
-    line-height: 45px;
-    font-weight: 700;
-    margin-top: -65px;
-    margin-left: -1px;
-}
-
-.coast-item span {
-    font-size: 30px;
-    line-height: 45px;
-    font-weight: 700;
+    display: none;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .about-us h2 {
@@ -688,6 +729,8 @@ a .button-slider {
 
 .breadcrumbs {
     list-style: none;
+    display: flex;
+    flex-direction: row;
 }
 
 .breadcrumbs a {
@@ -709,13 +752,52 @@ a .button-slider {
     background-color: #96aca0;
 }
 
+.filters h1,
+.filters h2,
+.filters,
+.filters ul  {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.filters h1 {
+    margin-left: 27px;
+}
+
+.filters fieldset {
+    border: none;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.form-filters {
+    display: flex;
+    flex-wrap: wrap;
+    width: 896px;
+    min-height: 159px;
+
+}
+
+.form-filters fieldset:nth-of-type(2) {
+    display: flex;
+}
+
+.for-cream {
+    display: flex;
+}
+
 h1.cream {
     font-size: 35px;
     line-height: 41px;
     font-weight: 700;
 }
 
-h2.filters-sorting {
+h2.sorting {
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
@@ -734,7 +816,6 @@ h2.filters-sorting {
     box-shadow:  0px 0px 0px 2px #ffffff;
     border-radius: 15px;
     border: none;
-
 }
 
 .button-filters:hover,
@@ -753,19 +834,39 @@ h2.filters-sorting {
 
 .pagination-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.pagination-list a {
+.pagination-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 110px;
+    max-width: 188px;
+    margin-right: 34px;
+    margin-left: auto;
+}
+
+.pagination-item a {
     color: #ffffff;
     background-color: #96aca0;
 }
 
-pagination-item1 a {
+pagination-item a:nth-child(1) {
     display: inline-block;
     width: 25px;
     height: 25px;
-    border-radius: 50%; /*почему 50% радиуса делает каждый елемент пагинатора овальным, а не круглым?*/
+    border-radius: 50%;
     color: #323232;
+    background-color: #ffffff;
+}
+
+.pagination-prev::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/svg/select-arrow.svg");
     background-color: #ffffff;
 }
 
@@ -808,4 +909,18 @@ pagination-item1 a {
     margin-left: 603px;
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+}
+.modal-basket{
+    display: flex;
+    position: absolute;
+    width: 540px;
+    height: 242px;
+    margin-top: -1591px;
+    margin-left: 633px;
+    border-radius: 5px;
+    box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+}
+
+.cost-total {
+    align-self: end;
 }

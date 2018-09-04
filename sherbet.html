@@ -29,7 +29,7 @@
         <ul class="second-menu-list">
             <li class="search-form"><a href="search.html" aria-label="Поиск"></a></li>
           <li class="login-form"><a class="login-link" href="login.html">Вход</a></li>
-          <li class="basket-form-catalog"><a class="basket-link" href="basket.html">2 Товара</a></li> <!--Корзина. оформить работоспособность?-->
+          <li class="basket-form-catalog"><a class="basket-link" href="basket.html">2 Товара</a></li>
         </ul>
       </div>
       <div class="contacts-in-head">
@@ -45,64 +45,63 @@
     </header>
 
     <main>
-      <h1 class="cream">Сливочное мороженое</h1>
-
       <section class="filters">
-        <form class="form-filters" action="https://echo.htmlacademy.ru" method="post">
-          <h2 class="filters-sorting">Сортировка</h2>
-          <fieldset>
-            <legend class="visually-hidden">По виду</legend>
-            <label>
-            <select class="sorting-catalog" name="popular"> 
-              <option value="По популярности">по популярности</option>
-              <option value="По популярности">сначала не дорогие</option>
-              <option value="По популярности">сначала дорогие</option>
-              <option value="По популярности">по жирности</option>
-            </select>
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend class="visually-hidden">По цене</legend>
-            <label for="cost" >Цена: 100 руб. – 500 руб.</label>
-            <input type="range" name="cost" id="cost" min="100" max="500">
-          </fieldset>
-          <fieldset>
-            <legend>Жирность:</legend>
-            <label>
-              <input type="radio" name="0-procent" value="0" >
-              0%
-            </label>
-            <label>
-              <input type="radio" name="10-procent" value="10" checked>
-              до 10%
-            </label>
-            <label>
-              <input type="radio" name="30-procent" value="30" >
-              до 30%
-            </label>
-            <label>
-              <input type="radio" name="more-30-procent" value="more-30" >
-              выше 30%
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend>Наполнители:</legend>
-            <ul>
-              <li>
-                <input type="checkbox" name="chocolat-cream" id="chocolad-cream" checked>
-                <label for="chocolad-cream">шоколадные</label></li>
-              <li><input type="checkbox" name="sugar" id="sugar" checked>
-                <label for="sugar">сахарные присыпки</label></li>
-              <li><input type="checkbox" name="fruit" id="fruit">
-                <label for="fruit">фрукты</label></li>
-              <li><input type="checkbox" name="syrup" id="syrup">
-                <label for="syrup">сиропы</label></li>
-              <li><input type="checkbox" name="jam" id="jam">
-                <label for="jam">джемы</label></li>
-            </ul>
-          </fieldset>
-          <button class="button-filters" type="submit">Применить</button>
-        </form>
+        <h1 class="cream">Сливочное мороженое</h1>
+          <form class="form-filters" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset>
+              <h2 class="sorting">Сортировка</h2>
+              <legend class="visually-hidden">По виду</legend>
+              <label>
+              <select class="sorting-catalog" name="popular"> 
+                <option value="По популярности">по популярности</option>
+                <option value="По популярности">сначала не дорогие</option>
+                <option value="По популярности">сначала дорогие</option>
+                <option value="По популярности">по жирности</option>
+              </select>
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend class="visually-hidden">По цене</legend>
+              <label for="cost" >Цена: 100 руб. – 500 руб.</label>
+              <input type="range" name="cost" id="cost" min="100" max="500">
+            </fieldset>
+            <fieldset>
+              <legend>Жирность:</legend>
+              <label>
+                <input type="radio" name="0-procent" value="0" >
+                0%
+              </label>
+              <label>
+                <input type="radio" name="10-procent" value="10" checked>
+                до 10%
+              </label>
+              <label>
+                <input type="radio" name="30-procent" value="30" >
+                до 30%
+              </label>
+              <label>
+                <input type="radio" name="more-30-procent" value="more-30" >
+                выше 30%
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Наполнители:</legend>
+              <ul class="for-cream">
+                <li>
+                  <input type="checkbox" name="chocolat-cream" id="chocolad-cream" checked>
+                  <label for="chocolad-cream">шоколадные</label></li>
+                <li><input type="checkbox" name="sugar" id="sugar" checked>
+                  <label for="sugar">сахарные присыпки</label></li>
+                <li><input type="checkbox" name="fruit" id="fruit">
+                  <label for="fruit">фрукты</label></li>
+                <li><input type="checkbox" name="syrup" id="syrup">
+                  <label for="syrup">сиропы</label></li>
+                <li><input type="checkbox" name="jam" id="jam">
+                  <label for="jam">джемы</label></li>
+              </ul>
+            </fieldset>
+            <div><button class="button-filters" type="submit">Применить</button></div> 
+          </form>
       </section>
 
       <section class="catalog">
@@ -117,7 +116,7 @@
               </a>
             </div>
             <div class="coast-item">310<span class="smol-word">/кг</span></div>
-            <h3 class="info-item"><a href="#"> Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+            <h3 class="info-item"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
             <a class="bottom bottom-pointing" href="#" aria-label="Быстрый просмотр">Быстрый просмотр</a>
           </li>
 
@@ -247,13 +246,13 @@
         </ul>
 
         <ul class="pagination-list">
-          <li class="pagination-prev">&#8249;</li>
-          <li class="pagination-item1"><a href="#">1</a></li>
+          <li class="pagination-prev"></li>
+          <li class="pagination-item"><a href="#">1</a></li>
           <li class="pagination-item"><a href="#">2</a></li>
           <li class="pagination-item"><a href="#">3</a></li>
           <li class="pagination-item"><a href="#">4</a></li>
           <li class="pagination-item"><a href="#">5</a></li>
-          <li class="pagination-next"><a href="#">&#8250;</a></li>
+          <li class="pagination-item"><a href="#"></a></li>
         </ul>
       </section>
 
@@ -280,7 +279,7 @@
           </div>
       </footer>
 
-      <section class="modal modal-basket">
+      <section class="modal modal-basket visually-hidden">
         <h2 class="visually-hidden">Корзина товара</h2>
         <form class="basket-catalog">
           <div class="basket-catalog-info">
