@@ -5,6 +5,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    max-width: 1200px;
 
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
@@ -15,12 +16,12 @@ body {
 
     /* background-image: url("../gllacy-index-1200.jpg");
     background-size: 1200px auto;
-    background-repeat: no-repeat;
- */
+    background-repeat: no-repeat; */
+
     /* background-image: url("../gllacy-catalog-1200.jpg");
     background-size: 1200px auto;
-    background-repeat: no-repeat;
- */
+    background-repeat: no-repeat; */
+
 }
 
 a {
@@ -49,9 +50,7 @@ a:focus {
   overflow: hidden;
 }
 
-.main-menu,
-.main-submenu,
-.second-menu-list,
+.main-header ul,
 .slider-list,
 .advantages-list,
 .catalog-list,
@@ -66,15 +65,38 @@ a:focus {
 .main-header {
     display: flex;
     flex-direction: row;
-    min-height: 118px;
+    justify-content: space-between;
+    min-height: 94px;
     width: 1200px;
+    padding-top: 23px;
     background-color: transparent;
     border:none;
 }
 
+.wrapper-main-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 27px;
+}
+
+.wrapper-main-menu div {
+    display: flex;
+    padding-top: 4px;
+}
+
+.nav-img:hover,
+.nav-img:focus {
+    border-bottom: none;
+}
+
+.nav-img {
+    margin-top: -18px;
+    margin-right: 28px;
+}
+
 .main-navigation {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 64px;
 }
 
@@ -93,6 +115,7 @@ a:focus {
 }
 
 .main-menu-focus .nav-item1{
+    margin-right: 28px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
@@ -105,7 +128,8 @@ a:focus {
 .main-menu-focus .nav-item1:focus {
     display: inline-block;
     margin-left: -13px;
-    margin-right: -13px;
+    margin-right: 15px;
+    margin-top: -7px;
     padding: 7px 13px;
     font-size: 16px;
     line-height: 18px;
@@ -118,7 +142,7 @@ a:focus {
 .main-menu-focus .nav-item1:active {
     display: inline-block;
     margin-left: -13px;
-    margin-right: -13px;
+    margin-right: 15px;
     padding: 7px 13px;
     font-size: 16px;
     line-height: 18px;
@@ -128,79 +152,46 @@ a:focus {
     background-color: #ededed;
     box-shadow: inset 0px 2px 2px 0px #696969;
 }
-
-.nav-img {
-    margin-right: 28px;
-}
-
-.second-menu-list {
-    display: flex;
-    margin-left: auto;
-}
-
-.second-menu-list a {
-    color: #ffffff;
-}
-
-.contacts-in-head,
-.contacts-in-head p {
-    margin: 0;
-    padding: 0;
-}
-
-.contacts-in-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 73px;
-    margin-bottom: 0px;
-}
-
-.time-info-head {
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
-    background-color: #96aca0;
-/* не получается разлепить текст (параграф от параграфа) контакты в шапке*/
-}
-
-.phone-head {
-    font-size: 22px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: #96aca0;
-}
  
 .main-submenu {
-    display: flex;
-    flex-direction: column;
+    display: none;
     position: absolute;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 5px;
-    margin-left: -21px;
-    padding: 0;
+    flex-direction: column;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
     background-color: #f8f7f4;
 }
+/* доработать наведение */
+.main-menu-active:hover .main-submenu{
+    display: flex;
+}
+
+.novelties h2,
+.main-menu li{
+    margin: 0px;
+    padding: 0px;
+}
 
 .novelties {
+    font-size: 14px;
+    line-height: 16px;
     color: #323232;
     font-weight: 700;
     padding-left: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .main-submenu a {
-    display: block;
-    width: auto;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
+
+    height: 33px;
+
+    font-size: 14px;
+    line-height: 16px;
     color: #323232;
     padding-left: 21px;
-    padding-bottom: 15px;
     padding-right: 21px;
 }
 
@@ -218,17 +209,29 @@ a:focus {
     padding-top: 11px; 
 }
 
+.second-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 27px;
+    min-height: 95px;
+}
+
 .second-menu-list {
-    justify-content: flex-end;
+    display: flex;
+    justify-content: space-between;
 }
 
 .second-menu-list a {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     font-size: 14px;
     line-height: 16px;
-    padding: 9px 16px;
+    padding: 6px 16px;
+    margin-left: 9px;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
+    border-radius: 16px;
 }
 
 .second-menu-list a:hover,
@@ -238,13 +241,63 @@ a:focus {
     background-color: #f8f7f4;
 }
 
+.search-form a:hover path,
+.search-form a:focus path,
+.login-form a:hover path,
+.login-form a:focus path,
+.basket-form a:hover path,
+.basket-form a:focus path,
+.second-menu-list a:hover circle,
+.second-menu-list a:focus circle {
+    fill: #000000;
+}
+
+.second-menu-list a:nth-child(1) {
+    margin-right: 1px;
+}
+
 .search-form a { 
-    display: inline-block;
+    display: flex;
     padding: 0;
     text-align: center;
     width: 32px;
     height: 32px;
     border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-in-head,
+.contacts-in-head p {
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-in-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 45px;
+    margin-top: 0px;
+}
+
+.time-info-head {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 7px;
+    color: #ffffff;
+    background-color: #96aca0;
+
+/* не получается разлепить текст (параграф от параграфа) контакты в шапке*/
+}
+
+.phone-head {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #96aca0;
 }
 
 .slider {
@@ -283,7 +336,7 @@ a:focus {
     height: 16px;
     margin-right: 12px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: transparent;
     border: none;
     box-shadow: 0 0 0 2px #ffffff;
 }
@@ -426,10 +479,26 @@ a .button-slider {
     min-height: 361px;
 }
 
+.wrapper-item-hover {
+    position: absolute;
+    display: none;
+    width: 293px;
+    height: 405px;
+    margin-top: -5px;
+    padding-top: 0px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+}
+
+.catalog-item:hover .wrapper-item-hover {
+    display: block;
+}
+
 .catalog-item-image {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .catalog-item-image img {
@@ -442,7 +511,7 @@ a .button-slider {
     border-radius: 50%;
 }
 
-.catalog-item::before {
+.hit-img::after {
     content: "";
     position: absolute;
     width: 61px;
@@ -480,6 +549,8 @@ a .button-slider {
 .info-item {
     max-width: 255px;
     margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info-item a {
@@ -639,6 +710,10 @@ a .button-slider {
     background-color: #849d8f;
 }
 
+.foter-social {
+    
+}
+
 .about-company-item a {
     text-decoration: none;
     font-size: 13px;
@@ -651,6 +726,10 @@ a .button-slider {
 .about-company-item a:focus {
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+.made-in-htmlacademy a:nth-child(1) {
+    border-bottom: none;
 }
 
 .link_htmlacademy {
@@ -670,10 +749,6 @@ a .button-slider {
 .link_htmlacademy:focus {
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
-}
-
-.made-in-htmlacademy a:nth-child(1) {
-    border-bottom: none;
 }
 
 .login-info {
@@ -712,19 +787,39 @@ a .button-slider {
 
 /*          ----------          Дополнительные стили для страницы каталога          ----------          */
 
+
 .main-menu-active .nav-item1 {
+    display: inline-block;
+    margin-top: -4px;
+    margin-right: 15px;
+    margin-left: -18px;
+    margin-bottom: 5px;
+    padding: 7px 13px;
+    
     font-size: 16px;
     line-height: 18px;
     font-weight: 400;
     color: #ffffff;
     background-color: #d07058;
+    border-radius: 15px;
+    border-bottom: none;
 }
+
 
 .basket-form-catalog a {
     font-size: 14px;
     line-height: 16px;
+    font-weight: 500;
     color: #323232;
     background-color: #f7f6f3;
+}
+
+.second-menu-list svg {
+    margin-right: 7px;
+}
+
+.search-form svg {
+    margin: 0px;
 }
 
 .breadcrumbs {
@@ -863,10 +958,13 @@ pagination-item a:nth-child(1) {
 }
 
 .pagination-prev::before {
+    display: block;
     content: "";
-    width: 25px;
-    height: 25px;
-    background-image: url("../img/svg/select-arrow.svg");
+    width: 8px;
+    height: 12px;
+    transform: rotate(180deg);
+    background-image: url("../img/svg/icon-right-small.svg");
+    background-repeat: no-repeat;
     background-color: #ffffff;
 }
 
