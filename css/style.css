@@ -24,6 +24,12 @@ body {
 
 }
 
+.main-wrapper {
+    max-width: 1146px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 a {
     text-decoration: none;
 }
@@ -76,7 +82,6 @@ a:focus {
 .wrapper-main-menu {
     display: flex;
     flex-direction: column;
-    margin-left: 27px;
 }
 
 .wrapper-main-menu div {
@@ -102,6 +107,7 @@ a:focus {
 
 .main-menu {
     display: flex;
+    position: relative;
 }
 
 .main-menu .nav-item {
@@ -153,9 +159,13 @@ a:focus {
     box-shadow: inset 0px 2px 2px 0px #696969;
 }
  
+/* При наведении исчезает радиус выпадашки, так же не могу стилизовать первый пункт меню в выпадашке (КАТАЛОГ). */
+/* Выпадашка при наведении на Каталог появляется, но если курсор на нее переводить, она исчезает... */
 .main-submenu {
     display: none;
     position: absolute;
+    top: 35px;
+    left: -5px;
     flex-direction: column;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
@@ -163,7 +173,10 @@ a:focus {
 }
 /* доработать наведение */
 .main-menu-active:hover .main-submenu{
-    display: flex;
+    display: block;
+}
+.main-menu-focus:hover .main-submenu{
+    display: block;
 }
 
 .novelties h2,
@@ -213,7 +226,6 @@ a:focus {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 27px;
     min-height: 95px;
 }
 
@@ -305,7 +317,6 @@ a:focus {
     flex-direction: column;
     width: 1146px;
     height: 529px;
-    padding-left: 27px;
 }
 
 .slider h2 {
@@ -327,7 +338,6 @@ a:focus {
 .slider-list {
     display: flex;
     margin-top: 51px;
-    margin-left: 4px;
 }
 
 .slide-btn {
@@ -364,12 +374,6 @@ a:focus {
     box-shadow: 0 0 0 2px #ffffff;
 }
 
-a .button-slider {
-    font-size: 32px;
-    height: 44px;
-}
-
-/* как переопределить размеры стоковых кнопок для всего сайта, делать ли их все разными по размерам горизонтальных паддингов, как на макете? */
 .box-for-btn {
     margin-left: auto;
     margin-right: auto;
@@ -409,10 +413,17 @@ a .button-slider {
     border: none;
 }
 
+.button-slider {
+    display: flex;
+    font-size: 32px;
+    height: 44px;
+    align-items: center;
+    margin-top: -43px;
+}
+
 .advantages-list {
     display: flex;
     flex-direction: row;
-    padding-left: 27px;
     margin-bottom: 40px;
 }
 
@@ -427,7 +438,6 @@ a .button-slider {
 .advantages-chocolate {
     width: 560px;
     min-height: 229px;
-    margin-left: 26px;
     background-image: url("../img/chocolate-background.jpg");
     border: none;
     border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
@@ -467,7 +477,6 @@ a .button-slider {
 .catalog-list {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 14px;
     min-height: 402px;
 }
 
@@ -482,6 +491,7 @@ a .button-slider {
 .wrapper-item-hover {
     position: absolute;
     display: none;
+    z-index: 10;
     width: 293px;
     height: 405px;
     margin-top: -5px;
@@ -556,9 +566,11 @@ a .button-slider {
 .info-item a {
     margin: 0px;
     padding: 0px;
+    text-decoration: underline;
 }
 
 .info-item a {
+    display: inline-block;
     max-width: 255px;
     font-size: 16px;
     line-height: 22px;
@@ -577,7 +589,7 @@ a .button-slider {
 }
 
 .bottom-pointing {
-    display: none;
+    display: block;
     text-align: center;
     color: #ffffff;
     font-size: 16px;
@@ -596,8 +608,8 @@ a .button-slider {
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;
-    margin-left: 27px;
     margin-right: auto;
+    margin-top: -40px;
     color: #323232;
     background-color: #ede1c7;
     background-image: url("../img/about-us.jpg");
@@ -621,8 +633,6 @@ a .button-slider {
 .banner {
     width: 560px;
     height: 220px;
-    margin-left: 27px;
-    margin-right: 26px;
     background-color: #ffffff;
     background-image: url("../img/strawberry.jpg");
     background-repeat: no-repeat;
@@ -671,7 +681,6 @@ a .button-slider {
 .our-contacts {
     max-width: 1200px;
     min-height: 431px;
-    /* Блок контактов тип блока section (над картой) не реагирует на минимальную высоту и радиус, что это может быить? */
 }
 
 .contacts-info p {
@@ -739,7 +748,7 @@ a .button-slider {
 .link_htmlacademy span {
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
-/* Как правильно сделать что бы белая линия подчеркивания "span" предидущего селектора скрывалась при наведении на всю ссылку, а не только при наведении на span? */
+
 .link_htmlacademy span:hover,
 .link_htmlacademy span:focus{
     border-bottom: none;
@@ -793,7 +802,6 @@ a .button-slider {
     margin-top: -4px;
     margin-right: 15px;
     margin-left: -18px;
-    margin-bottom: 5px;
     padding: 7px 13px;
     
     font-size: 16px;
@@ -857,7 +865,6 @@ a .button-slider {
 }
 
 .filters h1 {
-    margin-left: 27px;
 }
 
 .filters fieldset {
@@ -939,7 +946,6 @@ h2.sorting {
     align-items: center;
     min-height: 110px;
     max-width: 188px;
-    margin-right: 34px;
     margin-left: auto;
 }
 
@@ -948,8 +954,10 @@ h2.sorting {
     background-color: #96aca0;
 }
 
-pagination-item a:nth-child(1) {
-    display: inline-block;
+.pagination-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25px;
     height: 25px;
     border-radius: 50%;
