@@ -169,7 +169,7 @@ a:focus {
     border-radius: 5px;
     background-color: #f8f7f4;
 }
-/* доработать наведение */
+
 .main-menu-active:hover .main-submenu{
     display: block;
 }
@@ -177,10 +177,6 @@ a:focus {
 .main-menu-focus:hover .main-submenu{
     display: block;
 }
-
-/* .main-submenu :hover{
-    display: block;
-} */
 
 .novelties h2,
 .main-menu li{
@@ -195,6 +191,16 @@ a:focus {
     font-weight: 700;
     padding-left: 24px;
     margin-bottom: 14px;
+}
+
+.novelties::after {
+    content: "";
+    position: absolute;
+    width: 128px;
+    height: 10px;
+    top: 40px;
+    left: 7px;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main-submenu a {
@@ -215,6 +221,15 @@ a:focus {
 .main-submenu a:focus {
     background-color: #fbded7;
     align-content: center;
+    border: none;
+}
+
+.last-item-submenu:hover,
+.last-item-submenu:focus {
+    background-color: #fbded7;
+    align-content: center;
+    border: none;
+    border-radius: 0 0 5px 5px;
 }
 
 .main-submenu a:active {
@@ -544,28 +559,54 @@ a:focus {
     justify-content: space-between;
 }
 
+.catalog-list li {
+    text-align: center;
+}
+
 .catalog-item {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 267px;
-    min-height: 361px;
+    width: 293px;
+    height: 399px;
+    padding-top: 6px;
+    margin-top: -6px;
+    margin-bottom: -37px;
 }
 
-.wrapper-item-hover {
-    display: block;
-    z-index: 10;
-    width: 293px;
-    height: 405px;
-    margin-top: -5px;
-    padding-top: 0px;
+.catalog-item:hover {
     background-color: rgba(255,255,255,0.2);
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
 }
 
-.catalog-item:hover .wrapper-item-hover {
-    display: block;
+.catalog-item:nth-child(1),
+.catalog-item:nth-child(2),
+.catalog-item:nth-child(3),
+.catalog-item:nth-child(4) {
+    z-index: 5;
+}
+
+.catalog-item:nth-child(5),
+.catalog-item:nth-child(6),
+.catalog-item:nth-child(7),
+.catalog-item:nth-child(8) {
+    z-index: 4;
+}
+
+.catalog-item:nth-child(9),
+.catalog-item:nth-child(10),
+.catalog-item:nth-child(11),
+.catalog-item:nth-child(12) {
+    z-index: 3;
+}
+
+.catalog-item:nth-of-type(4n+1) {
+    margin-left: -13px;
+}
+
+.catalog-item:nth-of-type(4n+4) {
+    margin-right: -13px;
 }
 
 .catalog-item-image {
@@ -588,6 +629,7 @@ a:focus {
     position: absolute;
     width: 61px;
     height: 61px;
+    left: 13px;
     background-image: url("../img/svg/hit.svg");
 }
 
@@ -596,7 +638,8 @@ a:focus {
     font-size: 45px;
     line-height: 45px;
     font-weight: 500;
-    margin-top: 209px;
+    top: 215px;
+    left: 13px;
 }
 
 .coast-item span {
@@ -612,7 +655,7 @@ a:focus {
     width: 28px;
     height: 31px;
     margin-left: -73px;
-    margin-top: 8px;
+    margin-top: 7px;
     background-image: url("../img/svg/ruble.svg");
 }
 
@@ -626,34 +669,43 @@ a:focus {
 .info-item a {
     margin: 0px;
     padding: 0px;
-    text-decoration: underline;
 }
-/* подчеркивание  text-decoration: underline; не подходит, нужно стилизовать подчеркивание. А при стилизации подчеркивания некорректно подчеркивает ссылку как блок - display: inline-block;*/
+
 .info-item a {
-    display: inline-block;
     max-width: 255px;
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;
-    text-align: center;
     color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .info-item a:hover,
 .info-item a:focus {
     color: #ffbc9e;
-    border-bottom: none;
     font-size: 16px;
     line-height: 22px;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
 .button-pointing {
-    display: none;
+    opacity: 0;
     text-align: center;
     color: #ffffff;
     font-size: 16px;
     line-height: 22px;
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 22px;
+    margin-right: auto;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.catalog-item:hover .button-pointing {
+    opacity: 100;
 }
 
 .about-us h2 {
@@ -1012,7 +1064,6 @@ a:focus {
     margin: 0px;
     padding: 0px;
 }
-/* Не убирает подчеркивание у логотипа академии. Но если поменять на селектор  made-in-htmlacademy a - то все впорядке, снимает подчеркивание при наведении*/
 
 .logo-htmlacademy:hover,
 .logo-htmlacademy:focus {
@@ -1102,9 +1153,20 @@ a:focus {
 }
 
 .breadcrumbs {
+    position: relative;
     list-style: none;
-    display: flex;
-    flex-direction: row;
+    top: 4px;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 18px;
+}
+
+.breadcrumbs li:last-child {
+    margin-left: -2px;
 }
 
 .breadcrumbs a {
@@ -1124,6 +1186,17 @@ a:focus {
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
     background-color: #96aca0;
+}
+
+.breadcrumbs a::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    margin-top: 3px;
+    background-image: url("../img/svg/double-right.svg");
+    background-repeat: no-repeat;
 }
 
 .filters h1,
@@ -1218,10 +1291,37 @@ h2.sorting {
 }
 
 .pagination-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
     color: #ffffff;
+    border-radius: 25px;
+    border: none;
 }
 
+.pagination-item a:hover,
+.pagination-item a:focus {
+    background-color: rgba(255,255,255,0.2);
+}
 
+.pagination-item a:active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.pagination-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 25px;
+    border: none;
+}
 
 .pagination-prev::before {
     display: block;
@@ -1232,9 +1332,28 @@ h2.sorting {
     transform: rotate(180deg);
 }
 
+.pagination-list li:first-child {
+    margin-right: 12px;
+}
+
+.pagination-item .pagination-next {
+    width: 8px;
+    height: 12px;
+}
+
+.pagination-item .pagination-next:hover,
+.pagination-item .pagination-next:focus {
+    background-color: transparent;
+}
+
 .item-info span {
     color: #999999;
     background-color: #f8f7f4;
+}
+
+.footer-catalog {
+    margin-top: -12px;
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 
 /*          ----------          Стилизация модальных окон          ----------          */
@@ -1289,4 +1408,3 @@ h2.sorting {
 .cost-total {
     align-self: end;
 }
-
