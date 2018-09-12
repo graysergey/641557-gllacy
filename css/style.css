@@ -1188,7 +1188,7 @@ a:focus {
     background-color: #96aca0;
 }
 
-.breadcrumbs a::after {
+.row::after {
     content: "";
     position: absolute;
     width: 12px;
