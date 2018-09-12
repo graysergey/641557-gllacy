@@ -1,18 +1,17 @@
 /* 
-Не понимаю от куда в расчете появляется "flex-grow всех элементов" (от куда ее взять, что бы высчитать формулу);
+не могу задать заливку фона градиентом 90 градусов
  */
 html,
 body {
     margin: 0;
     padding: 0;
-    max-width: 1200px;
 
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;
     color: #ffffff;
-    background-color: #96aca0;
+    background-color: #849d8f;
 
     /* background-image: url("../gllacy-index-1200.jpg");
     background-size: 1200px auto;
@@ -73,7 +72,6 @@ a:focus {
     flex-direction: row;
     justify-content: space-between;
     min-height: 94px;
-    width: 1200px;
     padding-top: 23px;
     background-color: transparent;
     border:none;
@@ -96,7 +94,7 @@ a:focus {
 
 .nav-img {
     margin-top: -18px;
-    margin-right: 28px;
+    margin-right: 23px;
 }
 
 .main-navigation {
@@ -165,7 +163,7 @@ a:focus {
     display: none;
     position: absolute;
     top: 35px;
-    left: -5px;
+    left: -20px;
     flex-direction: column;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
@@ -175,9 +173,14 @@ a:focus {
 .main-menu-active:hover .main-submenu{
     display: block;
 }
+
 .main-menu-focus:hover .main-submenu{
     display: block;
 }
+
+/* .main-submenu :hover{
+    display: block;
+} */
 
 .novelties h2,
 .main-menu li{
@@ -211,6 +214,7 @@ a:focus {
 .main-submenu a:hover,
 .main-submenu a:focus {
     background-color: #fbded7;
+    align-content: center;
 }
 
 .main-submenu a:active {
@@ -421,26 +425,86 @@ a:focus {
     margin-top: -43px;
 }
 
+.advantages-list h3,
+.advantages-list p {
+    margin: 0px;
+    padding: 0px;
+}
+
 .advantages-list {
     display: flex;
     flex-direction: row;
+    min-height: 229px;
     margin-bottom: 40px;
 }
 
 .advantages-raspberries {
+    display: flex;
+    flex-direction: column;
     width: 560px;
-    min-height: 229px;
     background-image: url("../img/crimson-background.jpg");
+    border: none;
+    border-radius: 14px;
+}
+
+.advantages-raspberries h3 {
+    margin-top: 16px;
+    margin-left: 18px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.advantages-raspberries p {
+    margin-left: 19px;
+    margin-right: 25px;
+    margin-bottom: auto;
+}
+
+.raspberries-button {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 24px;
+    padding-left: 22px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 22px;
+    margin-bottom: 23px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.advantages-chocolate {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    margin-left: auto;
+    background-image: url("../img/chocolate-background.jpg");
     border: none;
     border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
 }
 
-.advantages-chocolate {
-    width: 560px;
-    min-height: 229px;
-    background-image: url("../img/chocolate-background.jpg");
-    border: none;
-    border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
+.advantages-chocolate h3 {
+    margin-top: 16px;
+    margin-left: 18px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.advantages-chocolate p {
+    margin-left: 19px;
+    margin-right: 25px;
+    margin-bottom: auto;
+}
+
+.chocolate-button {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 21px;
+    padding-left: 22px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 22px;
+    margin-bottom: 23px;
 }
 
 .advantages-raspberries p,
@@ -460,12 +524,11 @@ a:focus {
 .advantages-info {
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
+    font-weight: normal;
     color: #ffffff;
     background-color: #96aca0;
 }
 
-.catalog,
 .catalog-list,
 .catalog-item,
 .coast-item,
@@ -478,19 +541,19 @@ a:focus {
     display: flex;
     flex-wrap: wrap;
     min-height: 402px;
+    justify-content: space-between;
 }
 
 .catalog-item {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 293px;
+    width: 267px;
     min-height: 361px;
 }
 
 .wrapper-item-hover {
-    position: absolute;
-    display: none;
+    display: block;
     z-index: 10;
     width: 293px;
     height: 405px;
@@ -508,7 +571,6 @@ a:focus {
 .catalog-item-image {
     display: flex;
     justify-content: center;
-    margin-bottom: 16px;
 }
 
 .catalog-item-image img {
@@ -526,7 +588,6 @@ a:focus {
     position: absolute;
     width: 61px;
     height: 61px;
-    margin-left: 13px;
     background-image: url("../img/svg/hit.svg");
 }
 
@@ -536,7 +597,6 @@ a:focus {
     line-height: 45px;
     font-weight: 500;
     margin-top: 209px;
-    margin-left: 12px;
 }
 
 .coast-item span {
@@ -558,7 +618,7 @@ a:focus {
 
 .info-item {
     max-width: 255px;
-    margin-top: -10px;
+    margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -568,7 +628,7 @@ a:focus {
     padding: 0px;
     text-decoration: underline;
 }
-
+/* подчеркивание  text-decoration: underline; не подходит, нужно стилизовать подчеркивание. А при стилизации подчеркивания некорректно подчеркивает ссылку как блок - display: inline-block;*/
 .info-item a {
     display: inline-block;
     max-width: 255px;
@@ -577,19 +637,18 @@ a:focus {
     font-weight: normal;
     text-align: center;
     color: #ffffff;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .info-item a:hover,
 .info-item a:focus {
     color: #ffbc9e;
-    border-bottom: 1px solid rgba(255,188,158,0.3);
+    border-bottom: none;
     font-size: 16px;
     line-height: 22px;
 }
 
-.bottom-pointing {
-    display: block;
+.button-pointing {
+    display: none;
     text-align: center;
     color: #ffffff;
     font-size: 16px;
@@ -603,6 +662,8 @@ a:focus {
 }
 
 .about-us {
+    display: flex;
+    flex-direction: column;
     width: 1146px;
     min-height: 305px;
     font-size: 16px;
@@ -622,12 +683,52 @@ a:focus {
     line-height: 30px;
     font-weight: normal;
     color: #323232;
+    padding-top: 27px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 9px;
+}
+
+.about-us-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-right: 34px;
+    padding-left: 20px;
+    padding-bottom: 25px;
+}
+
+.about-us-items li {
+    display: flex;
+    flex-direction: row;
+    width: 531px;
+}
+
+.about-us-items div {
+    padding-right: 8px;
+}
+
+.about-us-items p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.about-us-items p {
+    padding-top: 15px;
 }
 
 .box-for-baners {
     display: flex;
     flex-direction: row;
     margin-bottom: 40px;
+}
+
+.box-for-baners h3,
+.box-for-baners h2 {
+    padding: 0px;
+    margin: 0px;
 }
 
 .banner {
@@ -644,15 +745,27 @@ a:focus {
     line-height: 22px;
     font-weight: 400;
     color: #323232;
+    padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
     background-color: #ffffff;
     background: transparent;
+}
+
+.banner p {
     margin: 0px;
     padding: 0px;
 }
 
+.banner p {
+    width: 293px;
+    margin-left: 20px;
+}
+
 .banner-info a {
     font-size: 24px;
-    line-height: 23px;
+    line-height: 30px;
     font-weight: 700;
     color: #323232;
     background: transparent;
@@ -666,8 +779,10 @@ a:focus {
 }
 
 .subscription {
+    display: flex;
     width: 550px;
     height: 210px;
+    margin-left: auto;
     color: #5a5a5a;
     background-color: #f8f7f4;
     border-radius: 15px;
@@ -678,9 +793,68 @@ a:focus {
     /* background-clip: content-box;  (хотел убрать в углах рамки еффект 90градусов. Как правильно задать параметры фоновой рамки, что бы углы были с нормальным радиусом?*/
 }
 
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscription-form label {
+    padding-top: 30px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.subscription-form div {
+    display: flex;
+    margin-top: auto;
+    padding-left: 20px;
+    padding-right: 22px;
+    padding-bottom: 31px;
+}
+
+.subscription-email {
+    width: 351px;
+    height: 44px;
+    padding-left: 14px;
+}
+
+.email-button {
+    padding-left: 18px;
+    padding-right: 19px;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    margin-left: auto;
+}
+
 .our-contacts {
-    max-width: 1200px;
+    position: relative;
     min-height: 431px;
+}
+
+.map {
+    margin-left: -27px;
+}
+/* как правильно сделать тень отметки на карте? */
+.our-contacts::before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 140px;
+    left: 239px;
+    top: 139px;
+    background-image: url("../img/svg/pin.svg");
+    z-index: 3;
+}
+
+.our-contacts::after {
+    position: absolute;
+    content: "";
+    width: 182px;
+    height: 110px;
+    left: 276px;
+    top: 170px;
+    background-image: url("../img/shadow.png");
+    z-index: 2;
 }
 
 .contacts-info p {
@@ -688,39 +862,129 @@ a:focus {
     margin: 0px;
 }
 
+.contacts-info p {
+    padding-left: 25px;
+}
+
 .contacts-info {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    max-width: 302px;
+    width: 302px;
     min-height: 305px;
     margin-top: -374px;
-    margin-left: 871px;
+    margin-left: 844px;
     border-radius: 15px;
     color: #323232;
     background-color: #fefefe;
 }
 
-.contacts-info :nth-child(1n){
+.contacts-info :nth-child(1) {
+    width: 152px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    margin-top: 29px;
+    margin-bottom: 2px;
+}
+
+.contacts-info :nth-child(2) {
+    width: 222px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+
+.contacts-info :nth-child(3) {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.contacts-info :nth-child(4) {
+    width: 222px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    margin-bottom: 0px;
+}
+
+.contacts-info :nth-child(5) {
     font-size: 14px;
     line-height: 20px;
     font-weight: normal;
 }
 
-.contacts-info :nth-child(2n){
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
+.feedback-button {
+    padding-left: 29px;
+    padding-right: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 31px;
+    margin-top: auto;
 }
 
 .footer-page {
     display: flex;
     flex-direction: row;
-    width: 1200px;
+    justify-content: space-between;
     min-height: 103px;
     background-color: #849d8f;
 }
 
 .foter-social {
-    
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    align-self: center;
+
+}
+
+/* Когда нажал на кнопку соц-сети - после  этого при наведении на нее она смещается на разсер бордера, не понимаю где его нужно убить*/
+.social-button {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    box-shadow: 0 0 0 2px #c2cec7;
+}
+
+.social-button:hover,
+.social-button:focus {
+    border-bottom: none;
+}
+
+
+.social-button path {
+    fill: #e6ebe9;
+}
+
+.social-button:hover path,
+.social-button:focus path {
+    fill: #ffffff;
+}
+
+.social-button:active path {
+    fill: #e9e9e9;
+}
+
+.foter-about-company ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.foter-about-company {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 328px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .about-company-item a {
@@ -737,21 +1001,27 @@ a:focus {
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-.made-in-htmlacademy a:nth-child(1) {
-    border-bottom: none;
+.made-in-htmlacademy {
+    width: 190px;
+    font-size: 12px;
+    line-height: 18px;
+    align-self: center;
+}
+
+.made-in-htmlacademy p {
+    margin: 0px;
+    padding: 0px;
+}
+/* Не убирает подчеркивание у логотипа академии. Но если поменять на селектор  made-in-htmlacademy a - то все впорядке, снимает подчеркивание при наведении*/
+
+.logo-htmlacademy:hover,
+.logo-htmlacademy:focus {
+    border: none;
 }
 
 .link_htmlacademy {
     color: #ffffff;
-}
-
-.link_htmlacademy span {
     border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.link_htmlacademy span:hover,
-.link_htmlacademy span:focus{
-    border-bottom: none;
 }
 
 .link_htmlacademy:hover,
@@ -759,6 +1029,8 @@ a:focus {
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
+
+
 
 .login-info {
     color:#323232;
@@ -791,7 +1063,6 @@ a:focus {
     background-color: #ffffff;
 
     border: 1px solid rgba(178,178,178,0.52);
-    /* box-shadow: 0px 0px 0px 20px rgba(46,136,228,0.52); */
 }
 
 /*          ----------          Дополнительные стили для страницы каталога          ----------          */
@@ -862,9 +1133,6 @@ a:focus {
     padding: 0px;
     margin: 0px;
     list-style: none;
-}
-
-.filters h1 {
 }
 
 .filters fieldset {
@@ -951,29 +1219,17 @@ h2.sorting {
 
 .pagination-item a {
     color: #ffffff;
-    background-color: #96aca0;
 }
 
-.pagination-item a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: #323232;
-    background-color: #ffffff;
-}
+
 
 .pagination-prev::before {
     display: block;
     content: "";
     width: 8px;
     height: 12px;
-    transform: rotate(180deg);
     background-image: url("../img/svg/icon-right-small.svg");
-    background-repeat: no-repeat;
-    background-color: #ffffff;
+    transform: rotate(180deg);
 }
 
 .item-info span {
@@ -989,6 +1245,7 @@ h2.sorting {
 }
 
 .modal-login {
+    display: none;
     position: absolute;
     width: 277px;
     height: 214px;
@@ -999,6 +1256,7 @@ h2.sorting {
 }
 
 .modal-feedback {
+    display: none;
     position: absolute;
     width: 447px;
     height: 442px;
@@ -1008,6 +1266,7 @@ h2.sorting {
 }
 
 .modal-search {
+    display: none;
     position: absolute;
     width: 341px;
     height: 84px;
@@ -1017,7 +1276,7 @@ h2.sorting {
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
 }
 .modal-basket{
-    display: flex;
+    display: none;
     position: absolute;
     width: 540px;
     height: 242px;
@@ -1030,3 +1289,4 @@ h2.sorting {
 .cost-total {
     align-self: end;
 }
+
