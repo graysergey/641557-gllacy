@@ -1382,6 +1382,8 @@ a:focus {
 }
 
 .filters fieldset {
+    margin: 0px;
+    padding: 0px;
     border: none;
 }
 
@@ -1394,6 +1396,7 @@ a:focus {
 .form-filters {
     display: flex;
     flex-wrap: wrap;
+    display: relative;
     width: 896px;
     min-height: 159px;
 
@@ -1404,10 +1407,36 @@ a:focus {
 }
 
 .sorting-catalog {
+    position: relative;
+
     width: 193px;
     height: 36px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    padding-left: 16px;
+    
     border-radius: 36px;
     border: none;
+    background-color: rgba(255,255,255,0.2);
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+/* Не появляется стрелка, не могу понять в чем причина, размеры тоже пробовал задавать */
+.sorting-catalog::after {
+    content: "";
+    position: absolute;
+
+
+    top: 50%;
+    right: 50%;
+    z-index: 20;
+
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #ffffff transparent transparent transparent;
 }
 
 .for-cream {
