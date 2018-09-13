@@ -8,15 +8,15 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body class="catalog-page">
-    <div class="main-wrapper">
+    <div class="page-alignment">
       <header class="main-header">
-        <div class="wrapper-main-menu">
+        <div class="box-for-menu">
           <div>
             <a class="nav-img" href="index.html"><img src="img/svg/logo.svg" width="154" height="64" alt="Логотип компании">
             </a>
             <nav class="main-navigation">
               <ul class="main-menu">
-                <li class="main-menu-active"><a class="nav-item1" href="sherbet.html">Каталог</a>
+                <li class="main-menu-active toggle"><a class="nav-item1" href="sherbet.html">Каталог</a>
                   <ul class="main-submenu">
                     <li><h2 class="novelties">Новинки</h2></li>
                     <li><a href="">Сливочное</a></li>
@@ -26,7 +26,7 @@
                   </ul>
                 </li>
                 <li> <a class="nav-item" href="shipping.html">Доставка и оплата</a></li>
-                <li> <a class="nav-item" href="company.html">О компании</a></li>
+                <li> <a class="nav-item" href="company.html">О Компании</a></li>
               </ul>
             </div>
             <ul class="breadcrumbs">
@@ -69,61 +69,61 @@
       <main>
         <section class="filters">
           <h1 class="cream">Сливочное мороженое</h1>
-            <form class="form-filters" action="https://echo.htmlacademy.ru" method="post">
-              <fieldset>
-                <h2 class="sorting">Сортировка</h2>
-                <legend class="visually-hidden">По виду</legend>
-                <label>
-                <select class="sorting-catalog" name="popular"> 
-                  <option value="По популярности">по популярности</option>
-                  <option value="По популярности">сначала не дорогие</option>
-                  <option value="По популярности">сначала дорогие</option>
-                  <option value="По популярности">по жирности</option>
-                </select>
-                </label>
-              </fieldset>
-              <fieldset>
-                <legend class="visually-hidden">По цене</legend>
-                <label for="cost" >Цена: 100 руб. – 500 руб.</label>
-                <input type="range" name="cost" id="cost" min="100" max="500">
-              </fieldset>
-              <fieldset>
-                <legend>Жирность:</legend>
-                <label>
-                  <input type="radio" name="0-procent" value="0" >
-                  0%
-                </label>
-                <label>
-                  <input type="radio" name="10-procent" value="10" checked>
-                  до 10%
-                </label>
-                <label>
-                  <input type="radio" name="30-procent" value="30" >
-                  до 30%
-                </label>
-                <label>
-                  <input type="radio" name="more-30-procent" value="more-30" >
-                  выше 30%
-                </label>
-              </fieldset>
-              <fieldset>
-                <legend>Наполнители:</legend>
-                <ul class="for-cream">
-                  <li>
-                    <input type="checkbox" name="chocolat-cream" id="chocolad-cream" checked>
-                    <label for="chocolad-cream">шоколадные</label></li>
-                  <li><input type="checkbox" name="sugar" id="sugar" checked>
-                    <label for="sugar">сахарные присыпки</label></li>
-                  <li><input type="checkbox" name="fruit" id="fruit">
-                    <label for="fruit">фрукты</label></li>
-                  <li><input type="checkbox" name="syrup" id="syrup">
-                    <label for="syrup">сиропы</label></li>
-                  <li><input type="checkbox" name="jam" id="jam">
-                    <label for="jam">джемы</label></li>
-                </ul>
-              </fieldset>
-              <div><button class="button-filters" type="submit">Применить</button></div> 
-            </form>
+          <form class="form-filters" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset>
+              <label>
+              <h2 class="visually-hidden">Фильтр товаров</h2>
+              <legend class="sorting">Сортировка</legend>
+              <select class="sorting-catalog" name="popular"> 
+                <option value="По популярности">по популярности</option>
+                <option value="По популярности">сначала не дорогие</option>
+                <option value="По популярности">сначала дорогие</option>
+                <option value="По популярности">по жирности</option>
+              </select>
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend class="visually-hidden">По цене</legend>
+              <label for="cost" >Цена: 100 руб. – 500 руб.</label>
+              <input type="range" name="cost" id="cost" min="100" max="500">
+            </fieldset>
+            <fieldset>
+              <legend>Жирность:</legend>
+              <label>
+                <input type="radio" name="0-procent" value="0" >
+                0%
+              </label>
+              <label>
+                <input type="radio" name="10-procent" value="10" checked>
+                до 10%
+              </label>
+              <label>
+                <input type="radio" name="30-procent" value="30" >
+                до 30%
+              </label>
+              <label>
+                <input type="radio" name="more-30-procent" value="more-30" >
+                выше 30%
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Наполнители:</legend>
+              <ul class="for-cream">
+                <li>
+                  <input type="checkbox" name="chocolat-cream" id="chocolad-cream" checked>
+                  <label for="chocolad-cream">шоколадные</label></li>
+                <li><input type="checkbox" name="sugar" id="sugar" checked>
+                  <label for="sugar">сахарные присыпки</label></li>
+                <li><input type="checkbox" name="fruit" id="fruit">
+                  <label for="fruit">фрукты</label></li>
+                <li><input type="checkbox" name="syrup" id="syrup">
+                  <label for="syrup">сиропы</label></li>
+                <li><input type="checkbox" name="jam" id="jam">
+                  <label for="jam">джемы</label></li>
+              </ul>
+            </fieldset>
+            <div><button class="button-filters" type="submit">Применить</button></div> 
+          </form>
         </section>
 
         <section class="catalog">

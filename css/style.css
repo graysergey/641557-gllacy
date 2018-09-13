@@ -1,6 +1,3 @@
-/* 
-не могу задать заливку фона градиентом 90 градусов
- */
 html,
 body {
     margin: 0;
@@ -11,19 +8,23 @@ body {
     line-height: 22px;
     font-weight: normal;
     color: #ffffff;
-    background-color: #849d8f;
-
-    /* background-image: url("../gllacy-index-1200.jpg");
-    background-size: 1200px auto;
-    background-repeat: no-repeat; */
-
-    /* background-image: url("../gllacy-catalog-1200.jpg");
-    background-size: 1200px auto;
-    background-repeat: no-repeat; */
-
 }
 
-.main-wrapper {
+.site-wrapper {
+    min-width: 1200px;
+    background-color: #849d8f;
+    background-image: url("../img/ice-cream-slide1.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin: 0 auto;
+}
+
+.container {
+    min-width: 1200px;
+    margin: 0 auto;
+  }
+
+.page-alignment {
     max-width: 1146px;
     margin-left: auto;
     margin-right: auto;
@@ -56,6 +57,7 @@ a:focus {
 }
 
 .main-header ul,
+.slider-controls,
 .slider-list,
 .advantages-list,
 .catalog-list,
@@ -77,12 +79,12 @@ a:focus {
     border:none;
 }
 
-.wrapper-main-menu {
+.box-for-menu {
     display: flex;
     flex-direction: column;
 }
 
-.wrapper-main-menu div {
+.box-for-menu div {
     display: flex;
     padding-top: 4px;
 }
@@ -156,12 +158,11 @@ a:focus {
     background-color: #ededed;
     box-shadow: inset 0px 2px 2px 0px #696969;
 }
- 
-/* При наведении исчезает радиус выпадашки, так же не могу стилизовать первый пункт меню в выпадашке (КАТАЛОГ). */
 /* Выпадашка при наведении на Каталог появляется, но если курсор на нее переводить, она исчезает... */
 .main-submenu {
     display: none;
     position: absolute;
+    width: 143px;
     top: 35px;
     left: -20px;
     flex-direction: column;
@@ -170,12 +171,17 @@ a:focus {
     background-color: #f8f7f4;
 }
 
-.main-menu-active:hover .main-submenu{
+.main-menu-active:hover .main-submenu {
     display: block;
 }
 
-.main-menu-focus:hover .main-submenu{
+.main-menu-focus:hover .main-submenu {
     display: block;
+}
+
+.main-menu .toggle {
+    padding: 0px 0px 14px 0px;
+    position: relative;
 }
 
 .novelties h2,
@@ -318,9 +324,7 @@ a:focus {
     line-height: 16px;
     margin-bottom: 7px;
     color: #ffffff;
-    background-color: #96aca0;
-
-/* не получается разлепить текст (параграф от параграфа) контакты в шапке*/
+    background-color: transparent;
 }
 
 .phone-head {
@@ -328,89 +332,28 @@ a:focus {
     line-height: 24px;
     font-weight: 700;
     color: #ffffff;
-    background-color: #96aca0;
-}
-
-.slider {
-    display: flex;
-    flex-direction: column;
-    width: 1146px;
-    height: 529px;
-}
-
-.slider h2 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 60px;
-    line-height: 60px;
-    font-weight: 700;
-    width: 670px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 274px;
-    color: #ffffff;
-    background-color: #96aca0;
-    background-color: transparent; /*убрать фон заголовка слайдера перед сдачей*/
-}
-
-.slider-list {
-    display: flex;
-    margin-top: 51px;
-}
-
-.slide-btn {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
     background-color: transparent;
-    border: none;
-    box-shadow: 0 0 0 2px #ffffff;
-}
-
-.slide-btn:hover, 
-.slide-btn:focus {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ffffff;
-    background-color: rgba(255,255,255,0.4);
-    border: none;
-}
-
-.slide-btn:active {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    box-shadow: 0 0 0 2px #ffffff;
-}
-
-.box-for-btn {
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .button {
-    font: inherit;
     display: inline-block;
-    text-align: center;
+    padding: 9px 41px;
+
     font-size: 18px;
     line-height: 24px;
-    padding: 9px 41px;
+    text-align: center;
     color: #ffffff;
-    text-shadow: 0px 2px 5px rgba(160,32,11,0.75);
-    background: linear-gradient(to top, #e74a35, #f26843);
-    border: none;
+    vertical-align: top;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+
+    background: #f26843;
+    background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
     border-radius: 50px;
-    box-shadow: 0 1px 1px 1px #ac1000;
+    box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+    border: none;
+
+    cursor: pointer;
 }
 
 .button:hover,
@@ -431,14 +374,172 @@ a:focus {
     box-shadow: inset 0px 2px 1px 1px #942718;
     border: none;
 }
+/* ---------------------Начало слайдера (удалю перед сдачей)-------------------- */
 
-.button-slider {
+/* .slider h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    width: 670px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 274px;
+    color: #ffffff;
+    background-color: #96aca0;
+    background-color: transparent; /*убрать фон заголовка слайдера перед сдачей
+}*/
+
+/* .slider-controls {
     display: flex;
-    font-size: 32px;
-    height: 44px;
-    align-items: center;
-    margin-top: -43px;
+    margin-top: 51px;
+} */
+
+/* .controls-btn {
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 0 2px #ffffff;
+} */
+
+/* .controls-btn:hover, 
+.controls-btn:focus {
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffff;
+    background-color: rgba(255,255,255,0.4);
+    border: none;
+} */
+
+/* .controls-btn:active {
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 0 0 2px #ffffff;
+} */
+
+.slider {
+    position: relative;
+    padding-top: 321px;
+    text-align: center;
+    color: #ffffff;
 }
+
+.slider-controls {
+    position: absolute;
+    bottom: 63px;
+    left: 0;
+    z-index: 20;
+    
+    font-size: 0;
+}
+
+.slider-controls li {
+    display: inline-block;
+}
+
+.slider-controls label {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 8px;
+  
+    vertical-align: top;
+  
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slide {
+    display: none;
+}
+
+.slide-title {
+    position: relative;
+    width: 700px;
+    margin-top: -7px;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 39px;
+    
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.slider-item {
+    text-align: center;
+}
+
+.button-slide {
+    font-size: 32px;
+    line-height: 41px;
+    font-weight: 500;
+    align-items: center;
+    padding: 12px 40px;
+    margin-top: -71px;
+    margin-bottom: 41px;
+}
+
+.hidden {
+    position: absolute;
+  
+    width: 1px;
+    height: 1px;
+  
+    clip: rect(0, 0, 0, 0);
+}
+
+#product-1:checked ~ .site-wrapper {
+    background-color: #849d8f;
+    background-image: url("../img/ice-cream-slide1.png");
+}
+  
+#product-2:checked ~ .site-wrapper {
+    background-color: #8996a6;
+    background-image: url("../img/ice-cream-slide2.png");
+}
+  
+#product-3:checked ~ .site-wrapper {
+    background-color: #9d8b84;
+    background-image: url("../img/ice-cream-slide3.png");
+}
+/* не получается задать селекторы классами - не работает. 
+Как сделать что бы при наведении на кнопку в состоянии активности - она не подсвечивалась эффектом hover? Что бы hover работал корректно. И как сделать что бы кнопки слайдеров выделялись табом?*/
+#product-1:checked ~ .site-wrapper #slide1,
+#product-2:checked ~ .site-wrapper #slide2,
+#product-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#product-1:checked ~ .site-wrapper label[for="product-1"],
+#product-2:checked ~ .site-wrapper label[for="product-2"],
+#product-3:checked ~ .site-wrapper label[for="product-3"] {
+  background-color: #ffffff;
+}
+
+#product-1:active ~ .site-wrapper label[for="product-1"],
+#product-2:active ~ .site-wrapper label[for="product-2"],
+#product-3:active ~ .site-wrapper label[for="product-3"] {
+  background-color: #ffffff;
+}
+
+/* ------------------------------ Конец слайдера (удалю перед сдачей) -------------- */
 
 .advantages-list h3,
 .advantages-list p {
@@ -830,19 +931,31 @@ a:focus {
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-.subscription {
+/* .wrapper-for-subscription {
+    margin: 0 auto;
+}
+
+.flex {
     display: flex;
+}
+
+.box-border {
+    width: 560px;
+    height: 220px;
+    padding: 5px;
+    border-image-source: url("../img/svg/bg-post.svg") no-repeat, repeating-linear-gradient(135deg,
+    rgba(255,255,255,1) 0px, rgba(255,255,255,1) 8px,
+    rgba(146,205,255,1) 8px, rgba(146,205,255,1) 16px,
+    rgba(255,255,255,1) 16px, rgba(255,255,255,1) 24px,
+    rgba(254,158,144,1) 24px, rgba(254,158,144,1) 32px);
+    border-radius: 15px;
+}
+
+.subscription {
     width: 550px;
-    height: 210px;
-    margin-left: auto;
-    color: #5a5a5a;
+    padding: 29px 21px;
     background-color: #f8f7f4;
     border-radius: 15px;
-    border: 5px solid transparent;
-    border-image-source: url("../img/svg/bg-post.svg");
-    border-image-slice: 5;
-    border-image-repeat: round;
-    /* background-clip: content-box;  (хотел убрать в углах рамки еффект 90градусов. Как правильно задать параметры фоновой рамки, что бы углы были с нормальным радиусом?*/
 }
 
 .subscription-form {
@@ -850,34 +963,80 @@ a:focus {
     flex-direction: column;
 }
 
-.subscription-form label {
-    padding-top: 30px;
-    padding-left: 22px;
-    padding-right: 22px;
-}
-
-.subscription-form div {
-    display: flex;
-    margin-top: auto;
-    padding-left: 20px;
-    padding-right: 22px;
-    padding-bottom: 31px;
+.subscription label {
+    width: 31.2em;
+    margin: 0;
+    margin-bottom: 35px;
+    letter-spacing: 0.004em;
+    color: #5a5a5a;
 }
 
 .subscription-email {
     width: 351px;
     height: 44px;
     padding-left: 14px;
+    margin-right: 10px;
+}
+
+.email-button {
+    padding-left: 20px;
+    padding-right: 19px;
+    padding-top: 8px;
+    padding-bottom: 11px;
+} */
+/* --------------------------бокс рамка (удалю перед сдачей)-------------------- */
+
+.flex {
+    display: flex;
+}
+.sign-up {
+    width: 550px;
+    min-height: 210px;
+    padding: 5px;
+    margin-left: auto;
+  
+    background:
+        url("../img/post.svg") no-repeat,
+        repeating-linear-gradient(135deg,
+        rgba(255,255,255,1) 0px, rgba(255,255,255,1) 7px,
+        rgba(146,205,255,1) 7px, rgba(146,205,255,1) 14px,
+        rgba(255,255,255,1) 14px, rgba(255,255,255,1) 21px,
+        rgba(254,158,144,1) 21px, rgba(254,158,144,1) 28px);
+    border-radius: 13px;
+  }
+
+.sign-up-bg {
+    width: 550px;
+    padding: 29px 21px;
+
+    background-color: #f8f7f4;
+    border-radius: 13px;
+}
+
+.sign-up-text {
+    font-size: 16;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 31px;
+    color: #5a5a5a;
+}
+
+.sign-up-form .form-input {
+
+    width: 351px;
+    height: 40px;
+    padding-left: 14px;
+    margin-right: 12px;
 }
 
 .email-button {
     padding-left: 18px;
-    padding-right: 19px;
-    padding-top: 9px;
-    padding-bottom: 11px;
-    margin-left: auto;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 10px;
 }
 
+/* --------------------------бокс рамка (удалю перед сдачей)-------------------- */
 .our-contacts {
     position: relative;
     min-height: 431px;
@@ -984,7 +1143,7 @@ a:focus {
     flex-direction: row;
     justify-content: space-between;
     min-height: 103px;
-    background-color: #849d8f;
+    background-color: transparent;
 }
 
 .foter-social {
@@ -995,7 +1154,6 @@ a:focus {
 
 }
 
-/* Когда нажал на кнопку соц-сети - после  этого при наведении на нее она смещается на разсер бордера, не понимаю где его нужно убить*/
 .social-button {
     display: block;
     width: 32px;
@@ -1117,7 +1275,13 @@ a:focus {
 }
 
 /*          ----------          Дополнительные стили для страницы каталога          ----------          */
+.catalog-page {
+    background: linear-gradient(to bottom, #9db1a5 0%, #849d8f 40%);
+}
 
+.catalog-page .nav-img {
+    margin-right: 29px;
+}
 
 .main-menu-active .nav-item1 {
     display: inline-block;
@@ -1135,6 +1299,9 @@ a:focus {
     border-bottom: none;
 }
 
+.catalog-page .main-submenu {
+    left: -25px;
+}
 
 .basket-form-catalog a {
     font-size: 14px;
@@ -1196,7 +1363,6 @@ a:focus {
     margin-left: 5px;
     margin-top: 3px;
     background-image: url("../img/svg/double-right.svg");
-    background-repeat: no-repeat;
 }
 
 .filters h1,
@@ -1228,6 +1394,13 @@ a:focus {
 
 .form-filters fieldset:nth-of-type(2) {
     display: flex;
+}
+
+.sorting-catalog {
+    width: 193px;
+    height: 36px;
+    border-radius: 36px;
+    border: none;
 }
 
 .for-cream {
