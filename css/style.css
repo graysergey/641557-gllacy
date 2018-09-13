@@ -159,7 +159,7 @@ a:focus {
     background-color: #ededed;
     box-shadow: inset 0px 2px 2px 0px #696969;
 }
-/* Выпадашка при наведении на Каталог появляется, но если курсор на нее переводить, она исчезает... */
+
 .main-submenu {
     display: none;
     position: absolute;
@@ -179,9 +179,9 @@ a:focus {
 .main-menu-focus:hover .main-submenu {
     display: block;
 }
-
+/* Можно ли пофиксить скрывание подменю по другому? и задать смысл этого селектора для подменю? Потому что выпадашка выпадает раньше чем наводится мышка на кнопку "Каталог" */
 .main-menu .toggle {
-    padding: 0px 0px 14px 0px;
+    padding: 0px 0px 11px 0px;
     position: relative;
 }
 
