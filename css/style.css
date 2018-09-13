@@ -108,6 +108,7 @@ a:focus {
 .main-menu {
     display: flex;
     position: relative;
+    z-index: 10;
 }
 
 .main-menu .nav-item {
@@ -163,7 +164,7 @@ a:focus {
     display: none;
     position: absolute;
     width: 143px;
-    top: 35px;
+    top: 33px;
     left: -20px;
     flex-direction: column;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
@@ -185,7 +186,7 @@ a:focus {
 }
 
 .novelties h2,
-.main-menu li{
+.main-menu li {
     margin: 0px;
     padding: 0px;
 }
@@ -195,8 +196,9 @@ a:focus {
     line-height: 16px;
     color: #323232;
     font-weight: 700;
-    padding-left: 24px;
-    margin-bottom: 14px;
+    margin-top: 0px;
+    padding-left: 20px;
+    margin-bottom: 3px;
 }
 
 .novelties::after {
@@ -204,7 +206,7 @@ a:focus {
     position: absolute;
     width: 128px;
     height: 10px;
-    top: 40px;
+    top:28px;
     left: 7px;
     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
 }
@@ -214,12 +216,12 @@ a:focus {
     justify-content: flex-start;
     align-items: center;
 
-    height: 33px;
+    height: 32px;
 
     font-size: 14px;
     line-height: 16px;
     color: #323232;
-    padding-left: 21px;
+    padding-left: 20px;
     padding-right: 21px;
 }
 
@@ -228,6 +230,10 @@ a:focus {
     background-color: #fbded7;
     align-content: center;
     border: none;
+}
+
+.last-item-submenu {
+    padding-bottom: 4px;
 }
 
 .last-item-submenu:hover,
@@ -243,8 +249,9 @@ a:focus {
     background-color: #f6b5a5;
 }
 
-.main-submenu li:nth-child(1) {
-    padding-top: 11px; 
+.main-submenu li:first-child {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .second-menu {
