@@ -1440,7 +1440,7 @@ input[type="radio"].visually-hidden {
     background-color: transparent;
 }
 
-.filter-input-radio + label:after {
+.filter-input-radio:checked + label:after {
     position: absolute;
     content: "";
     width: 8px;
@@ -1476,22 +1476,21 @@ input[type="radio"].visually-hidden {
 .filter-input-checkbox + label:before {
     position: absolute;
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     left: 14px;
-    top: 1px;
-    border-radius: 2px;
-    border: 2px solid #ffffff;
-    background-color: transparent;
+    top: 0px;
+    background-image: url("../img/svg/checkbox-off.svg");
+    background-repeat: no-repeat;
 }
 
-.filter-input-checkbo:checked ~ .filter-input-checkbox::after {
+.filter-input-checkbox:checked + label::after {
     position: absolute;
     content: "";
-    width: 8px;
-    height: 8px;
-    left: 22px;
-    top: 7px;
+    width: 24px;
+    height: 20px;
+    left: 14px;
+    top: 0px;
     background-image: url("../img/svg/checkbox-on.svg");
     background-repeat: no-repeat;
 }
@@ -1657,7 +1656,7 @@ input[type="radio"].visually-hidden {
 }
 
 .modal-basket{
-    display: block;
+    display: none;
     position: absolute;
     width: 540px;
     height: 242px;
