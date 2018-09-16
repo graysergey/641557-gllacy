@@ -1298,7 +1298,7 @@ input[type="radio"].visually-hidden {
     display: relative;
     width: 896px;
     min-height: 135px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 .form-filters legend {
@@ -1306,8 +1306,8 @@ input[type="radio"].visually-hidden {
     line-height: 16px;
     font-weight: normal;
 
-    margin-left: 16px;
-    margin-bottom: 6px;
+    margin-left: 14px;
+    margin-bottom: 7px;
     
 }
 
@@ -1503,7 +1503,7 @@ input[type="radio"].visually-hidden {
     font-size: 16px;
     line-height: 18px;
     padding: 7px 27px;
-    margin-top: 23px;
+    margin-top: 25px;
     margin-left: 2px;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
