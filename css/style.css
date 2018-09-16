@@ -383,62 +383,7 @@ input[type="radio"].visually-hidden {
     box-shadow: inset 0px 2px 1px 1px #942718;
     border: none;
 }
-/* ---------------------Начало слайдера (удалю перед сдачей)-------------------- */
-
-/* .slider h2 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 60px;
-    line-height: 60px;
-    font-weight: 700;
-    width: 670px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 274px;
-    color: #ffffff;
-    background-color: #96aca0;
-    background-color: transparent; /*убрать фон заголовка слайдера перед сдачей
-}*/
-
-/* .slider-controls {
-    display: flex;
-    margin-top: 51px;
-} */
-
-/* .controls-btn {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: none;
-    box-shadow: 0 0 0 2px #ffffff;
-} */
-
-/* .controls-btn:hover, 
-.controls-btn:focus {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ffffff;
-    background-color: rgba(255,255,255,0.4);
-    border: none;
-} */
-
-/* .controls-btn:active {
-    outline: none;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    box-shadow: 0 0 0 2px #ffffff;
-} */
+/* - Начало слайдера (удалю перед сдачей) - */
 
 .slider {
     position: relative;
@@ -528,7 +473,7 @@ input[type="radio"].visually-hidden {
     background-color: #9d8b84;
     background-image: url("../img/ice-cream-slide3.png");
 }
-/* не получается задать селекторы классами - не работает. 
+/* не получается задать селекторы классами - не работает слайдер. 
 Как сделать что бы при наведении на кнопку в состоянии активности - она не подсвечивалась эффектом hover? Что бы hover работал корректно. И как сделать что бы кнопки слайдеров выделялись табом?*/
 #product-1:checked ~ .site-wrapper #slide1,
 #product-2:checked ~ .site-wrapper #slide2,
@@ -548,7 +493,7 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 
-/* ------------------------------ Конец слайдера (удалю перед сдачей) -------------- */
+/* - Конец слайдера - */
 
 .advantages-list h3,
 .advantages-list p {
@@ -605,7 +550,7 @@ input[type="radio"].visually-hidden {
     margin-left: auto;
     background-image: url("../img/chocolate-background.jpg");
     border: none;
-    border-radius: 14px; /*радиус на 2 px больше что бы перекрыть белый фон радиуса картинки, взятого из фотошопа*/
+    border-radius: 14px;
 }
 
 .advantages-chocolate h3 {
@@ -940,61 +885,6 @@ input[type="radio"].visually-hidden {
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
-/* .wrapper-for-subscription {
-    margin: 0 auto;
-}
-
-.flex {
-    display: flex;
-}
-
-.box-border {
-    width: 560px;
-    height: 220px;
-    padding: 5px;
-    border-image-source: url("../img/svg/bg-post.svg") no-repeat, repeating-linear-gradient(135deg,
-    rgba(255,255,255,1) 0px, rgba(255,255,255,1) 8px,
-    rgba(146,205,255,1) 8px, rgba(146,205,255,1) 16px,
-    rgba(255,255,255,1) 16px, rgba(255,255,255,1) 24px,
-    rgba(254,158,144,1) 24px, rgba(254,158,144,1) 32px);
-    border-radius: 15px;
-}
-
-.subscription {
-    width: 550px;
-    padding: 29px 21px;
-    background-color: #f8f7f4;
-    border-radius: 15px;
-}
-
-.subscription-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.subscription label {
-    width: 31.2em;
-    margin: 0;
-    margin-bottom: 35px;
-    letter-spacing: 0.004em;
-    color: #5a5a5a;
-}
-
-.subscription-email {
-    width: 351px;
-    height: 44px;
-    padding-left: 14px;
-    margin-right: 10px;
-}
-
-.email-button {
-    padding-left: 20px;
-    padding-right: 19px;
-    padding-top: 8px;
-    padding-bottom: 11px;
-} */
-/* --------------------------бокс рамка (удалю перед сдачей)-------------------- */
-
 .flex {
     display: flex;
 }
@@ -1045,7 +935,6 @@ input[type="radio"].visually-hidden {
     padding-bottom: 10px;
 }
 
-/* --------------------------бокс рамка (удалю перед сдачей)-------------------- */
 .our-contacts {
     position: relative;
     min-height: 431px;
@@ -1283,7 +1172,7 @@ input[type="radio"].visually-hidden {
     border: 1px solid rgba(178,178,178,0.52);
 }
 
-/*          ----------          Дополнительные стили для страницы каталога          ----------          */
+/* - Стилизация страницы каталога - */
 .catalog-page {
     background: linear-gradient(to bottom, #9db1a5 0%, #849d8f 40%);
 }
@@ -1373,7 +1262,7 @@ input[type="radio"].visually-hidden {
     margin-top: 3px;
     background-image: url("../img/svg/double-right.svg");
 }
-
+/* - стилизация фильтров (начало) - */
 .filters h1,
 .filters h2,
 .filters ul  {
@@ -1405,10 +1294,11 @@ input[type="radio"].visually-hidden {
 .form-filters {
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
     display: relative;
     width: 896px;
     min-height: 135px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
 }
 
 .form-filters legend {
@@ -1516,7 +1406,6 @@ input[type="radio"].visually-hidden {
 }
 
 .list-fat {
-    display: inline-block;
     width: 414px;
     height: 36px;
     margin: 0;
@@ -1563,7 +1452,48 @@ input[type="radio"].visually-hidden {
 }
 
 .for-cream {
-    display: flex;
+    width: 702px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+
+    border-radius: 36px;
+    border: none;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.for-cream li {
+    position: relative;
+    display: inline-block;
+    top: 6px;
+}
+
+.filter-input-checkbox + label {
+    position: relative;
+    padding-left: 47px;
+}
+
+.filter-input-checkbox + label:before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    left: 14px;
+    top: 1px;
+    border-radius: 2px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+}
+
+.filter-input-checkbo:checked ~ .filter-input-checkbox::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    left: 22px;
+    top: 7px;
+    background-image: url("../img/svg/checkbox-on.svg");
+    background-repeat: no-repeat;
 }
 
 .button-filters {
@@ -1572,8 +1502,9 @@ input[type="radio"].visually-hidden {
     vertical-align: middle;
     font-size: 16px;
     line-height: 18px;
-    min-height: 36px;
-    padding: 7px 28px;
+    padding: 7px 27px;
+    margin-top: 23px;
+    margin-left: 2px;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
     box-shadow:  0px 0px 0px 2px #ffffff;
@@ -1594,7 +1525,7 @@ input[type="radio"].visually-hidden {
     box-shadow: inset 0px 2px 2px 0px #696969;
     border: none;
 }
-
+/* - Стилизация фильров (конец) */
 .pagination-list {
     list-style: none;
     margin: 0;
@@ -1676,7 +1607,7 @@ input[type="radio"].visually-hidden {
     border-top: 1px solid rgba(255,255,255,0.3);
 }
 
-/*          ----------          Стилизация модальных окон          ----------          */
+/* - Стилизация модальных окон - */
 
 .modal {
     color: #323232;
