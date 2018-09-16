@@ -7,7 +7,7 @@
     <link href="/css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="main">
     <input class="hidden product-1" type="radio" id="product-1" name="toggle" checked>
     <input class="hidden product-2" type="radio" id="product-2" name="toggle">
     <input class="hidden product-3" type="radio" id="product-3" name="toggle">
@@ -64,6 +64,7 @@
               </div>
             </div>
           </header>
+
           <main class="home-page">
 
             <h1 class="visually-hidden">Магазин мороженного</h1>
@@ -323,21 +324,23 @@
           <section class="modal modal-login">
             <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
               <h2 class="visually-hidden login-form">Форма входа</h2>
-              <p>
+              <div>
                 <label class="visually-hidden" for="email-login">Введите электронную почту</label>
                 <input class="input modal-login-email" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
-              </p>
-              <p>
+              </div>
+              <div>
                 <label class="visually-hidden" for="password-login">Введите свой пароль</label>
                 <input class="input modal-login-password" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
-              </p>
-              <button class="button" type="button">Войти</button>
-              <p>
-                <a class="login-info" href="#">Забыли пароль?</a>
-              </p>
-              <p>
-                <a class="login-info" href="#">Новая регистрация</a>
-              </p>
+              </div>
+              <div>
+                <button class="button" type="button">Войти</button>
+                <p>
+                  <a class="login-info" href="#">Забыли пароль?</a>
+                </p>
+                <p>
+                  <a class="login-info" href="#">Новая регистрация</a>
+                </p>
+            </div>
             </form>
           </section>
 
