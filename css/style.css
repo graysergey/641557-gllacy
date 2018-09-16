@@ -1209,6 +1209,10 @@ input[type="radio"].visually-hidden {
     background-color: #f7f6f3;
 }
 
+.second-menu-list span {
+    padding-top: 1px;
+}
+
 .second-menu-list svg {
     margin-right: 7px;
 }
@@ -1308,17 +1312,24 @@ input[type="radio"].visually-hidden {
 
     margin-left: 14px;
     margin-bottom: 7px;
-    
 }
 
-.sorting-catalog {
-    position: relative;
+.form-filters fieldset {
+    height: 60px;
+}
+
+.box-for-row {
     width: 193px;
+}
+
+.sorting {
+    position: relative;
+    width: 194px;
     height: 36px;
     font-size: 16px;
     line-height: 18px;
-    color: #ffffff;
-    padding-left: 16px;
+    color: inherit;
+    padding-left: 15px;
     
     border-radius: 36px;
     border: none;
@@ -1328,31 +1339,34 @@ input[type="radio"].visually-hidden {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    transition: color .4s ease;
 }
 
-.sorting-catalog:hover,
-.sorting-catalog:focus {
+.box-for-row:hover,
+.box-for-row:focus {
     color: #000000;
+    border-color: #000000;
 }
 
-.box-for-row {
+.box-for-row label[for="filter-sorting"] {
+    width: 0px;
+    height: 0px;
+
     position: relative;
-    cursor: pointer;
+    top: -12px;
+    right: -169px;
+
+    border: 5px solid #ffffff;
+    border-top: 10px solid #ffffff;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+
+    transition: border-color .25s ease;
 }
-/* можно ли сделать что бы при случайном нажатии на саму стрелку в  меню сортировки выпадал список? Потому что стрелка сама по себе не интерактивная, и никакого действия не делает */
-.box-for-row::after {
-    content: "";
-    position: absolute;
 
-
-    top: 50%;
-    right: 14px;
-    z-index: 1;
-
-    border-style: solid;
-    border-width: 10px 5px 0 5px;
-    border-color: #ffffff transparent transparent transparent;
-    margin-top: -4px;
+.box-for-row:hover label[for="filter-sorting"] {
+    border-top: 10px solid #000000;
 }
 
 .range-controls {
@@ -1420,27 +1434,34 @@ input[type="radio"].visually-hidden {
     position: relative;
     display: inline-block;
     top: 6px;
+    
 }
-/* не могу выровнять текст филтра по жирности вертикально по центру */
+
 .filter-input-radio + label {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     padding-left: 46px;
+    user-select: none;
+    cursor: pointer;
 }
 
-.filter-input-radio + label:before {
+.filter-input-radio + label::before {
     position: absolute;
     content: "";
     width: 14px;
     height: 14px;
     left: 14px;
-    border: 4px solid #ffffff;
+    border: 4px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     background-color: transparent;
 }
 
-.filter-input-radio:checked + label:after {
+.filter-input-radio:hover + label::before {
+    border: 4px solid #ffffff;
+}
+
+.filter-input-radio:checked + label::after {
     position: absolute;
     content: "";
     width: 8px;
@@ -1448,6 +1469,10 @@ input[type="radio"].visually-hidden {
     left: 21px;
     top: 7px;
     border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-input-radio:hover + label::after {
     background-color: #ffffff;
 }
 
@@ -1471,9 +1496,11 @@ input[type="radio"].visually-hidden {
 .filter-input-checkbox + label {
     position: relative;
     padding-left: 47px;
+    user-select: none;
+    cursor: pointer;
 }
 
-.filter-input-checkbox + label:before {
+.filter-input-checkbox + label::before {
     position: absolute;
     content: "";
     width: 20px;
@@ -1482,6 +1509,11 @@ input[type="radio"].visually-hidden {
     top: 0px;
     background-image: url("../img/svg/checkbox-off.svg");
     background-repeat: no-repeat;
+}
+
+.filter-input-checkbox:hover + label::before,
+.filter-input-checkbox:focus + label::before {
+    background-image: url("../img/svg/checkbox-off-hover.svg");
 }
 
 .filter-input-checkbox:checked + label::after {
@@ -1493,6 +1525,11 @@ input[type="radio"].visually-hidden {
     top: 0px;
     background-image: url("../img/svg/checkbox-on.svg");
     background-repeat: no-repeat;
+}
+
+.filter-input-checkbox:hover + label::after,
+.filter-input-checkbox:focus + label::after {
+    background-image: url("../img/svg/checkbox-on-hover.svg");
 }
 
 .button-filters {
@@ -1509,6 +1546,7 @@ input[type="radio"].visually-hidden {
     box-shadow:  0px 0px 0px 2px #ffffff;
     border-radius: 36px;
     border: none;
+    cursor: pointer;
 }
 
 .button-filters:hover,
