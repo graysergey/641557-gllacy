@@ -32,6 +32,7 @@ body {
 
 a {
     text-decoration: none;
+    transition: color .5s ease;
 }
 
 a:hover,
@@ -225,6 +226,7 @@ input[type="radio"].visually-hidden {
     color: #323232;
     padding-left: 20px;
     padding-right: 21px;
+    transition: color .5s ease, background-color .5s ease;
 }
 
 .main-submenu a:hover,
@@ -240,9 +242,6 @@ input[type="radio"].visually-hidden {
 
 .last-item-submenu:hover,
 .last-item-submenu:focus {
-    background-color: #fbded7;
-    align-content: center;
-    border: none;
     border-radius: 0 0 5px 5px;
 }
 
@@ -278,6 +277,7 @@ input[type="radio"].visually-hidden {
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
     border-radius: 16px;
+    transition: color .5s ease, background-color .5s ease; 
 }
 
 .second-menu-list a:hover,
@@ -296,6 +296,7 @@ input[type="radio"].visually-hidden {
 .second-menu-list a:hover circle,
 .second-menu-list a:focus circle {
     fill: #000000;
+    transition: fill .5s ease-in-out;
 }
 
 .second-menu-list a:nth-child(1) {
@@ -363,6 +364,7 @@ input[type="radio"].visually-hidden {
     border: none;
 
     cursor: pointer;
+    transition: color .5s ease, background-color .5s ease;
 }
 
 .button:hover,
@@ -373,6 +375,7 @@ input[type="radio"].visually-hidden {
     background: #ef7762;
     box-shadow: 0 1px 1px 1px #ac1000;
     border: none;
+    transition: background-color .4s ease;
 }
 
 .button:active {
@@ -633,6 +636,7 @@ input[type="radio"].visually-hidden {
     background-color: rgba(255,255,255,0.2);
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+    transition: box-shadow .5s ease, background-color .5s ease;
 }
 /* Можно ли решить вопрос нависания над нижней карточкой по другому? Что бы при добавлении новых карточек товара, им автоматом присваивался зет индекс меньше чем у предидущего ряда. Если сейчас добавить в разметку, для переполнения карточки, то при наведении - оно будет скрываться под следующей карточкой, а не нависать над ней. */
 .catalog-item:nth-child(1),
@@ -757,6 +761,8 @@ input[type="radio"].visually-hidden {
     margin-bottom: 22px;
     margin-right: auto;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    /* transition: opasity .9s ease; не рабатает на появление кнопок товара*/
+
 }
 
 .catalog-item:hover .button-pointing {
@@ -1058,6 +1064,7 @@ input[type="radio"].visually-hidden {
     height: 32px;
     border-radius: 32px;
     box-shadow: 0 0 0 2px #c2cec7;
+    transition: box-shadow .5s ease;
 }
 
 .social-button:hover,
@@ -1068,6 +1075,7 @@ input[type="radio"].visually-hidden {
 
 .social-button path {
     fill: #e6ebe9;
+    transition: fill .5s ease;
 }
 
 .social-button:hover path,
@@ -1142,12 +1150,6 @@ input[type="radio"].visually-hidden {
 .login-info {
     color:#323232;
     border-bottom: 1px solid rgba(50,50,50,0.3);
-}
-
-.feedback-form p:nth-of-type(1) {
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: 700;
 }
 
 .input {
@@ -1324,7 +1326,7 @@ input[type="radio"].visually-hidden {
 
 .sorting {
     position: relative;
-    width: 194px;
+    width: 193px;
     height: 36px;
     font-size: 16px;
     line-height: 18px;
@@ -1339,7 +1341,7 @@ input[type="radio"].visually-hidden {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    transition: color .4s ease;
+    transition: color .5s ease;
 }
 
 .box-for-row:hover,
@@ -1362,7 +1364,7 @@ input[type="radio"].visually-hidden {
     border-bottom-color: transparent;
     border-left-color: transparent;
 
-    transition: border-color .25s ease;
+    transition: border-color .5s ease;
 }
 
 .box-for-row:hover label[for="filter-sorting"] {
@@ -1455,6 +1457,7 @@ input[type="radio"].visually-hidden {
     border: 4px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     background-color: transparent;
+    transition: border-color .5s ease;
 }
 
 .filter-input-radio:hover + label::before {
@@ -1470,6 +1473,7 @@ input[type="radio"].visually-hidden {
     top: 7px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color .5s ease;
 }
 
 .filter-input-radio:hover + label::after {
@@ -1509,6 +1513,7 @@ input[type="radio"].visually-hidden {
     top: 0px;
     background-image: url("../img/svg/checkbox-off.svg");
     background-repeat: no-repeat;
+    transition: background-image .5s ease;
 }
 
 .filter-input-checkbox:hover + label::before,
@@ -1525,6 +1530,7 @@ input[type="radio"].visually-hidden {
     top: 0px;
     background-image: url("../img/svg/checkbox-on.svg");
     background-repeat: no-repeat;
+    transition: background-image .5s ease;
 }
 
 .filter-input-checkbox:hover + label::after,
@@ -1547,6 +1553,7 @@ input[type="radio"].visually-hidden {
     border-radius: 36px;
     border: none;
     cursor: pointer;
+    transition: background-color .5s ease, color .5s ease;
 }
 
 .button-filters:hover,
@@ -1651,15 +1658,62 @@ input[type="radio"].visually-hidden {
     background-color: #f8f7f4;
 }
 
+.login-form {
+    position: relative;
+}
+/* если окно логина положить внутри li, что бы на всех страницах отображалось адекватно вся стилизация едет. (возможно из за флекса) Как быть ? */
 .modal-login {
-    display: block;
+    opacity: 100;
     position: absolute;
-    width: 277px;
-    height: 214px;
-    margin-top: -2350px;
-    margin-left: 771px;
+    width: 241px;
+    height: 175px;
+    padding-top: 20px;
+    padding-right: 17px;
+    padding-bottom: 22px;
+    padding-left: 19px;
+    top: 60px;
+    left: 1025px;
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+/* не получается реализовать появление окна логина */
+.login-form a:hover modal-login {
+    opacity: 100;
+}
+
+.login-enter {
+    width: 227px;
+    height: 44px;
+    padding-left: 14px;
+    margin-bottom: 20px
+}
+
+.modal-login p {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper-login {
+    display: flex;
+}
+
+.modal-login a {
+    font-size: 13px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.modal-login a:hover,
+.modal-login a:focus {
+    color: #ffbc9e;
+    border-bottom: 1px solid rgba(255,188,158,0.3);
+}
+
+.button-login {
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 14px;
 }
 
 .modal-feedback {
@@ -1703,8 +1757,6 @@ input[type="radio"].visually-hidden {
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
 }
-
-.
 
 .cost-total {
     align-self: end;

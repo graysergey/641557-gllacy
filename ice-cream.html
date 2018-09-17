@@ -64,6 +64,30 @@
             <p class="phone-head"><b>8 812 450-25-25</b></p>
           </div>
         </div>
+        <section class="modal modal-login">
+            <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+              <h2 class="visually-hidden login-form">Форма входа</h2>
+              <div >
+                <label class="visually-hidden" for="email-login">Введите электронную почту</label>
+                <input class="input login-enter" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
+              </div>
+              <div>
+                <label class="visually-hidden" for="password-login">Введите свой пароль</label>
+                <input class="input login-enter" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
+              </div>
+              <div class="wrapper-login">
+                <div><button class="button button-login" type="button">Войти</button></div>
+                <div>
+                  <p>
+                    <a class="forget-pasword" href="forget-pasword.html">Забыли пароль?</a>
+                  </p>
+                  <p>
+                    <a class="new-registration" href="new-registration.html">Новая регистрация</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </section>
       </header>
 
       <main>
@@ -377,15 +401,6 @@
             </p>
             <button class="button basket-button" type="button">Оформить заказ</button>
           </div>
-        </form>
-      </section>
-
-      <section class="modal modal-searchf">
-        <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
-          <h2 class="visually-hidden">Окно поиска</h2>
-          <label>
-            <input class="input modal-search-input" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
-          </label>
         </form>
       </section>
     </div>

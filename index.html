@@ -63,6 +63,30 @@
                 <p class="phone-head"><b>8 812 450-25-25</b></p>
               </div>
             </div>
+            <section class="modal modal-login">
+              <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+                <h2 class="visually-hidden login-form">Форма входа</h2>
+                <div >
+                  <label class="visually-hidden" for="email-login">Введите электронную почту</label>
+                  <input class="input login-enter" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
+                </div>
+                <div>
+                  <label class="visually-hidden" for="password-login">Введите свой пароль</label>
+                  <input class="input login-enter" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
+                </div>
+                <div class="wrapper-login">
+                  <div><button class="button button-login" type="button">Войти</button></div>
+                  <div>
+                    <p>
+                      <a class="forget-pasword" href="forget-pasword.html">Забыли пароль?</a>
+                    </p>
+                    <p>
+                      <a class="new-registration" href="new-registration.html">Новая регистрация</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </section>
           </header>
 
           <main class="home-page">
@@ -217,22 +241,6 @@
                 <h3>Новое в нашем блоге</h3>
                   <p class="banner-info"> <a href="blog.html" aria-label="10 способов сервировки фруктовых щербетов к столу">10 способов сервировки фруктовых щербетов к столу</a></p>
               </article>
-              <!-- <div class="wrapper-for-subscription">
-                <div class="box-border flex">
-                  <section  class="subscription">
-                    <h2 class="visually-hidden">Пописаться на сладкую рассылку</h2>
-                    <label for="email-subscription">
-                      Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
-                    </label>
-                    <form  class="subscription-form flex" action="https://echo.htmlacademy.ru" method="post">
-                      <input class="input subscription-email" type="email" name="subscription" id="email-subscription" placeholder="Электронная почта" recuired>
-                      <button class="button email-button" type="submit" value="отправить">
-                        Отправить
-                      </button>
-                    </form>
-                  </section>
-                </div>
-              </div> -->
 
               <div class="sign-up flex">
                 <div class="sign-up-bg flex-column">
@@ -320,46 +328,23 @@
                 <p>Сделано в <a class="link_htmlacademy" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="лендинг интенсива «Профессиональный HTML и CSS, уровень 1»">HTML Academy</a> © 2017</p>
             </div>
           </footer>
-          
-          <section class="modal modal-login">
-            <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-              <h2 class="visually-hidden login-form">Форма входа</h2>
-              <div >
-                <label class="visually-hidden" for="email-login">Введите электронную почту</label>
-                <input class="input modal-login-email" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
-              </div>
-              <div>
-                <label class="visually-hidden" for="password-login">Введите свой пароль</label>
-                <input class="input modal-login-password" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
-              </div>
-              <div >
-                <button class="button" type="button">Войти</button>
-                <p>
-                  <a class="forget-pasword" href="forget-pasword.html">Забыли пароль?</a>
-                </p>
-                <p>
-                  <a class="new-registration" href="new-registration.html">Новая регистрация</a>
-                </p>
-            </div>
-            </form>
-          </section>
 
           <section class="modal modal-feedback">
             <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
               <h2 class="visually-hidden">Форма обратной связи</h2>
               <p>Мы обязательно вам отвеетим!</p>
-              <p>
+              <div>
                 <label class="visually-hidden" for="name-feedback">Введите свое имя</label>
-                <input class="input modal-feedback-name" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
-              </p>
-              <p>
+                <input class="input feedback-enter" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
+              </div>
+              <div>
                 <label class="visually-hidden" for="email-feedback">Введите вашу почту для ответа</label>
-                <input class="input modal-feedback-email" type="password" name="password-login" id="email-feedback" placeholder="Ваша почта для ответа?" autocomplete="on">
-              </p>
-              <p>
+                <input class="input feedback-enter" type="password" name="password-login" id="email-feedback" placeholder="Ваша почта для ответа?" autocomplete="on">
+              </div>
+              <div>
                 <label class="visually-hidden" for="text-feedback">Напишите что нибудь</label>
                 <textarea class="input modal-feedback-text" name="text-feedback" id="text-feedback" placeholder="Напишите что нибудь..." autocomplete="on" rows="5"></textarea>
-              </p>
+              </div>
               <button class="button button-feedback" type="button">Отправить</button>
             </form>
           </section>
@@ -372,6 +357,7 @@
               </label>
             </form>
           </section>
+
         </div>
       </div>
     </div>
