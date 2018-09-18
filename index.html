@@ -43,15 +43,35 @@
                     </svg>
                   </a>
                 </li>
-                <li class="login-form" aria-label="Форма входа">
-                  <a href="login.html" >
+                <li class="login-form toggle-login" aria-label="Форма входа">
+                  <a class="login-link" href="login.html" >
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19" viewBox="0 0 21 19"><g fill="#000"><path d="M6 14.875L12.917 9.5 6 4.125v2.917H-.042v4.917H6z" fill="#fff"></path><path d="M18 0H5C3.9 0 3 .9 3 2v2h2V2h13v15H5v-2H3v2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z" fill="#fff"></path></g>
                     </svg>
                     <span>Вход</span>
                   </a>
+                  <section class="window login-window">
+                    <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+                      <h2 class="visually-hidden login-form">Форма входа</h2>
+                      <div >
+                        <label class="visually-hidden" for="email-login">Введите электронную почту</label>
+                        <input class="input login-enter" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
+                      </div>
+                      <div>
+                        <label class="visually-hidden" for="password-login">Введите свой пароль</label>
+                        <input class="input login-enter" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
+                      </div>
+                      <div class="wrapper-login">
+                        <div><button class="button button-login" type="button">Войти</button></div>
+                        <div class="wrapper-login-link">
+                          <div><a class="forget-pasword" href="forget-pasword.html">Забыли пароль?</a></div>
+                          <div><a class="new-registration" href="new-registration.html">Новая регистрация</a></div>
+                        </div>
+                      </div>
+                    </form>
+                  </section>
                 </li>
                 <li class="basket-form">
-                  <a href="basket.html" aria-label="Корзина">
+                  <a class="basket-link" href="basket.html" aria-label="Корзина">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"><g fill="#FFF"><path d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"/><circle cx="6.984" cy="18" r="2"/><circle cx="15.984" cy="18" r="2"/></g>
                     </svg>
                     <span>Пусто</span>
@@ -63,30 +83,6 @@
                 <p class="phone-head"><b>8 812 450-25-25</b></p>
               </div>
             </div>
-            <section class="modal modal-login">
-              <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-                <h2 class="visually-hidden login-form">Форма входа</h2>
-                <div >
-                  <label class="visually-hidden" for="email-login">Введите электронную почту</label>
-                  <input class="input login-enter" type="email" name="email-login" id="email-login" placeholder="Электронная почта" autocomplete="on">
-                </div>
-                <div>
-                  <label class="visually-hidden" for="password-login">Введите свой пароль</label>
-                  <input class="input login-enter" type="password" name="password-login" id="password-login" placeholder="Пароль" autocomplete="on">
-                </div>
-                <div class="wrapper-login">
-                  <div><button class="button button-login" type="button">Войти</button></div>
-                  <div>
-                    <p>
-                      <a class="forget-pasword" href="forget-pasword.html">Забыли пароль?</a>
-                    </p>
-                    <p>
-                      <a class="new-registration" href="new-registration.html">Новая регистрация</a>
-                    </p>
-                  </div>
-                </div>
-              </form>
-            </section>
           </header>
 
           <main class="home-page">
@@ -241,6 +237,22 @@
                 <h3>Новое в нашем блоге</h3>
                   <p class="banner-info"> <a href="blog.html" aria-label="10 способов сервировки фруктовых щербетов к столу">10 способов сервировки фруктовых щербетов к столу</a></p>
               </article>
+              <!-- <div class="wrapper-for-subscription">
+                <div class="box-border flex">
+                  <section  class="subscription">
+                    <h2 class="visually-hidden">Пописаться на сладкую рассылку</h2>
+                    <label for="email-subscription">
+                      Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
+                    </label>
+                    <form  class="subscription-form flex" action="https://echo.htmlacademy.ru" method="post">
+                      <input class="input subscription-email" type="email" name="subscription" id="email-subscription" placeholder="Электронная почта" recuired>
+                      <button class="button email-button" type="submit" value="отправить">
+                        Отправить
+                      </button>
+                    </form>
+                  </section>
+                </div>
+              </div> -->
 
               <div class="sign-up flex">
                 <div class="sign-up-bg flex-column">
@@ -329,35 +341,34 @@
             </div>
           </footer>
 
-          <section class="modal modal-feedback">
+          <section class="window modal-feedback">
             <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
               <h2 class="visually-hidden">Форма обратной связи</h2>
               <p>Мы обязательно вам отвеетим!</p>
-              <div>
+              <p>
                 <label class="visually-hidden" for="name-feedback">Введите свое имя</label>
-                <input class="input feedback-enter" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
-              </div>
-              <div>
+                <input class="input modal-feedback-name" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
+              </p>
+              <p>
                 <label class="visually-hidden" for="email-feedback">Введите вашу почту для ответа</label>
-                <input class="input feedback-enter" type="password" name="password-login" id="email-feedback" placeholder="Ваша почта для ответа?" autocomplete="on">
-              </div>
-              <div>
+                <input class="input modal-feedback-email" type="password" name="password-login" id="email-feedback" placeholder="Ваша почта для ответа?" autocomplete="on">
+              </p>
+              <p>
                 <label class="visually-hidden" for="text-feedback">Напишите что нибудь</label>
                 <textarea class="input modal-feedback-text" name="text-feedback" id="text-feedback" placeholder="Напишите что нибудь..." autocomplete="on" rows="5"></textarea>
-              </div>
+              </p>
               <button class="button button-feedback" type="button">Отправить</button>
             </form>
           </section>
 
-          <section class="modal modal-search">
+          <section class="window search-window">
             <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
               <h2 class="visually-hidden">Окно поиска</h2>
               <label>
-                <input class="input modal-search-input" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
+                <input class="input search-inpu" type="text" name="search" placeholder="Что ищем?" aria-label="введите ваш запрос">
               </label>
             </form>
           </section>
-
         </div>
       </div>
     </div>

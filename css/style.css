@@ -173,16 +173,19 @@ input[type="radio"].visually-hidden {
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
     background-color: #f8f7f4;
+    transition: display .5s ease;
+    /* transition не хочет отрабатывать для display, а если задать opacity что бы отрабатывало то выпадашка появляется раньше времени */
 }
 
 .main-menu-active:hover .main-submenu {
     display: block;
-}
 
+}
+/* в выпадающем меню :focus не хочет отрабатывать */
 .main-menu-focus:hover .main-submenu {
     display: block;
 }
-/* Можно ли пофиксить скрывание подменю по другому? и задать смысл селектора ниже, селектору для подменю? Потому что выпадашка выпадает раньше чем наводится мышка на кнопку "Каталог" */
+
 .main-menu .toggle-menu {
     padding: 0px 0px 11px 0px;
     position: relative;
@@ -267,7 +270,10 @@ input[type="radio"].visually-hidden {
     justify-content: space-between;
 }
 
-.second-menu-list a {
+.search-form a,
+.login-form a,
+.basket-form a,
+.basket-form-catalog a {
     display: flex;
     justify-content: center;
     font-size: 14px;
@@ -276,12 +282,16 @@ input[type="radio"].visually-hidden {
     margin-left: 9px;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
-    border-radius: 16px;
     transition: color .5s ease, background-color .5s ease; 
 }
 
-.second-menu-list a:hover,
-.second-menu-list a:focus {
+.login-link,
+.basket-link {
+    border-radius: 16px;
+}
+
+.second-menu a:hover,
+.second-menu a:focus {
     border: none;
     color: #323232;
     background-color: #f8f7f4;
@@ -293,13 +303,13 @@ input[type="radio"].visually-hidden {
 .login-form a:focus path,
 .basket-form a:hover path,
 .basket-form a:focus path,
-.second-menu-list a:hover circle,
-.second-menu-list a:focus circle {
+.second-menu a:hover circle,
+.second-menu a:focus circle {
     fill: #000000;
     transition: fill .5s ease-in-out;
 }
 
-.second-menu-list a:nth-child(1) {
+.second-menu a:nth-child(1) {
     margin-right: 1px;
 }
 
@@ -453,6 +463,8 @@ input[type="radio"].visually-hidden {
     margin-bottom: 41px;
 }
 
+
+
 .hidden {
     position: absolute;
   
@@ -462,37 +474,43 @@ input[type="radio"].visually-hidden {
     clip: rect(0, 0, 0, 0);
 }
 
-#product-1:checked ~ .site-wrapper {
+.product-1:checked ~ .site-wrapper {
     background-color: #849d8f;
     background-image: url("../img/ice-cream-slide1.png");
 }
   
-#product-2:checked ~ .site-wrapper {
+.product-2:checked ~ .site-wrapper {
     background-color: #8996a6;
     background-image: url("../img/ice-cream-slide2.png");
 }
   
-#product-3:checked ~ .site-wrapper {
+.product-3:checked ~ .site-wrapper {
     background-color: #9d8b84;
     background-image: url("../img/ice-cream-slide3.png");
 }
-/* не получается задать селекторы классами - не работает слайдер. 
-Как сделать что бы при наведении на кнопку в состоянии активности - она не подсвечивалась эффектом hover? Что бы hover работал корректно. И как сделать что бы кнопки слайдеров выделялись табом?*/
-#product-1:checked ~ .site-wrapper #slide1,
-#product-2:checked ~ .site-wrapper #slide2,
-#product-3:checked ~ .site-wrapper #slide3 {
+/* не получается задать селекторы классами - не работает слайдер. Как сделать что бы кнопки слайдеров выделялись табом?*/
+.product-1:checked ~ .site-wrapper .slide-1,
+.product-2:checked ~ .site-wrapper .slide-2,
+.product-3:checked ~ .site-wrapper .slide-3 {
   display: block;
 }
 
-#product-1:checked ~ .site-wrapper label[for="product-1"],
-#product-2:checked ~ .site-wrapper label[for="product-2"],
-#product-3:checked ~ .site-wrapper label[for="product-3"] {
+.product-1:checked ~ .site-wrapper label[for="product-1"],
+.product-2:checked ~ .site-wrapper label[for="product-2"],
+.product-3:checked ~ .site-wrapper label[for="product-3"] {
   background-color: #ffffff;
 }
 
-#product-1:active ~ .site-wrapper label[for="product-1"],
-#product-2:active ~ .site-wrapper label[for="product-2"],
-#product-3:active ~ .site-wrapper label[for="product-3"] {
+.product-1 ~ .site-wrapper label[for="product-1"]:hover,
+.product-2 ~ .site-wrapper label[for="product-2"]:hover,
+.product-3 ~ .site-wrapper label[for="product-3"]:hover
+ {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.product-1:checked ~ .site-wrapper label[for="product-1"]:hover,
+.product-2:checked ~ .site-wrapper label[for="product-2"]:hover,
+.product-3:checked ~ .site-wrapper label[for="product-3"]:hover {
   background-color: #ffffff;
 }
 
@@ -637,27 +655,7 @@ input[type="radio"].visually-hidden {
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     transition: box-shadow .5s ease, background-color .5s ease;
-}
-/* Можно ли решить вопрос нависания над нижней карточкой по другому? Что бы при добавлении новых карточек товара, им автоматом присваивался зет индекс меньше чем у предидущего ряда. Если сейчас добавить в разметку, для переполнения карточки, то при наведении - оно будет скрываться под следующей карточкой, а не нависать над ней. */
-.catalog-item:nth-child(1),
-.catalog-item:nth-child(2),
-.catalog-item:nth-child(3),
-.catalog-item:nth-child(4) {
-    z-index: 5;
-}
-
-.catalog-item:nth-child(5),
-.catalog-item:nth-child(6),
-.catalog-item:nth-child(7),
-.catalog-item:nth-child(8) {
-    z-index: 4;
-}
-
-.catalog-item:nth-child(9),
-.catalog-item:nth-child(10),
-.catalog-item:nth-child(11),
-.catalog-item:nth-child(12) {
-    z-index: 3;
+    z-index: 10;
 }
 
 .catalog-item:nth-of-type(4n+1) {
@@ -1533,6 +1531,7 @@ input[type="radio"].visually-hidden {
     transition: background-image .5s ease;
 }
 
+
 .filter-input-checkbox:hover + label::after,
 .filter-input-checkbox:focus + label::after {
     background-image: url("../img/svg/checkbox-on-hover.svg");
@@ -1553,7 +1552,7 @@ input[type="radio"].visually-hidden {
     border-radius: 36px;
     border: none;
     cursor: pointer;
-    transition: background-color .5s ease, color .5s ease;
+    transition: background-image .5s ease, color .5s ease;
 }
 
 .button-filters:hover,
@@ -1561,6 +1560,7 @@ input[type="radio"].visually-hidden {
     color: #323232;
     background-color: #ffffff;
     border: none;
+    transition: background-image .5s ease, color .5s ease;
 }
 
 .button-filters:active {
@@ -1651,69 +1651,96 @@ input[type="radio"].visually-hidden {
     border-top: 1px solid rgba(255,255,255,0.3);
 }
 
-/* - Стилизация модальных окон - */
+/* - Стилизация всплывающих окон - */
 
-.modal {
+.window {
     color: #323232;
     background-color: #f8f7f4;
 }
 
 .login-form {
     position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
 }
-/* если окно логина положить внутри li, что бы на всех страницах отображалось адекватно вся стилизация едет. (возможно из за флекса) Как быть ? */
-.modal-login {
-    opacity: 100;
+
+.login-window {
+    opacity: 0;
     position: absolute;
     width: 241px;
-    height: 175px;
+    height: 172px;
     padding-top: 20px;
     padding-right: 17px;
     padding-bottom: 22px;
     padding-left: 19px;
-    top: 60px;
-    left: 1025px;
+    top: 36px;
+    left: -175px;
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     z-index: 1;
+    transition: opacity .5s ease;
 }
-/* не получается реализовать появление окна логина */
-.login-form a:hover modal-login {
-    opacity: 100;
+/* селектор не отрабатывает активность окна логина*/
+.login-form .toggle-login {
+    padding: 0px 0px 11px 0px;
+    position: relative;
+}
+
+/* Это два селектора? или уже вложеностью три? */
+.main-header .login-link:hover ~ .login-window {
+    opacity: 1;
 }
 
 .login-enter {
-    width: 227px;
-    height: 44px;
+    width: 224px;
+    height: 40px;
     padding-left: 14px;
     margin-bottom: 20px
-}
-
-.modal-login p {
-    margin: 0;
-    padding: 0;
 }
 
 .wrapper-login {
     display: flex;
 }
 
-.modal-login a {
-    font-size: 13px;
-    line-height: 24px;
-    color: #000000;
+.wrapper-login-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: -2px;
 }
 
-.modal-login a:hover,
-.modal-login a:focus {
+.login-window a {
+    display: inline;
+    font-size: 13px;
+    line-height: 24px;
+    color: #323232;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+    border-radius: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+}
+
+.login-window .new-registration {
+    position: relative;
+    top: -4px;
+}
+
+.login-window a:hover,
+.login-window a:focus {
     color: #ffbc9e;
     border-bottom: 1px solid rgba(255,188,158,0.3);
 }
 
 .button-login {
+    padding-top: 11px;
     padding-right: 25px;
-    padding-left: 25px;
-    margin-right: 14px;
+    padding-left: 23px;
+    padding-bottom: 10px;
+    border-radius: 17px 17px 17px 17px/22px 22px 22px 22px;
+    box-shadow: 0 1px 2px rgba(172, 16, 0, 0.64);
 }
 
 .modal-feedback {
@@ -1726,7 +1753,7 @@ input[type="radio"].visually-hidden {
     border-radius: 10px;
 }
 
-.modal-search {
+.search-window {
     display: none;
     position: absolute;
     width: 341px;
@@ -1738,7 +1765,7 @@ input[type="radio"].visually-hidden {
     z-index: 999;
 }
 
-.modal-search-input {
+.search-input {
     width: 295px;
     height: 44px;
     border-radius: 5px;
