@@ -25,7 +25,7 @@ body {
   }
 
 .page-alignment {
-    max-width: 1146px;
+    width: 1146px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -85,11 +85,13 @@ input[type="radio"].visually-hidden {
 .box-for-menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .box-for-menu div {
     display: flex;
     padding-top: 4px;
+    margin-bottom: 10px;
 }
 
 .nav-img:hover,
@@ -173,15 +175,15 @@ input[type="radio"].visually-hidden {
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
     background-color: #f8f7f4;
-    /* transition не хочет отрабатывать для display, а если задать opacity что бы отрабатывало то выпадашка появляется раньше времени */
 }
 
 .main-menu-active:hover .main-submenu {
     display: block;
 
 }
-/* в выпадающем меню :focus не хочет отрабатывать */
-.main-menu-focus:hover .main-submenu {
+
+.main-menu-focus:hover .main-submenu,
+.main-menu-focus:focus .main-submenu {
     display: block;
 }
 
@@ -341,6 +343,7 @@ input[type="radio"].visually-hidden {
 .time-info-head {
     font-size: 14px;
     line-height: 16px;
+    font-weight: 700;
     margin-bottom: 7px;
     color: #ffffff;
     background-color: transparent;
@@ -392,7 +395,6 @@ input[type="radio"].visually-hidden {
     box-shadow: inset 0px 2px 1px 1px #942718;
     border: none;
 }
-/* - Начало слайдера (удалю перед сдачей) - */
 
 .slider {
     position: relative;
@@ -510,8 +512,6 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 
-/* - Конец слайдера - */
-
 .advantages-list h3,
 .advantages-list p {
     margin: 0px;
@@ -535,6 +535,9 @@ input[type="radio"].visually-hidden {
 }
 
 .advantages-raspberries h3 {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
     margin-top: 16px;
     margin-left: 18px;
     margin-right: 20px;
@@ -542,6 +545,9 @@ input[type="radio"].visually-hidden {
 }
 
 .advantages-raspberries p {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
     margin-left: 19px;
     margin-right: 25px;
     margin-bottom: auto;
@@ -571,6 +577,9 @@ input[type="radio"].visually-hidden {
 }
 
 .advantages-chocolate h3 {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
     margin-top: 16px;
     margin-left: 18px;
     margin-right: 20px;
@@ -578,6 +587,9 @@ input[type="radio"].visually-hidden {
 }
 
 .advantages-chocolate p {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
     margin-left: 19px;
     margin-right: 25px;
     margin-bottom: auto;
@@ -633,9 +645,6 @@ input[type="radio"].visually-hidden {
 
 .catalog-list li {
     text-align: center;
-}
-
-.catalog-item {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -646,7 +655,7 @@ input[type="radio"].visually-hidden {
     margin-bottom: -37px;
 }
 
-.catalog-item:hover {
+.catalog-list li:hover {
     background-color: rgba(255,255,255,0.2);
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
@@ -654,11 +663,11 @@ input[type="radio"].visually-hidden {
     z-index: 10;
 }
 
-.catalog-item:nth-of-type(4n+1) {
+.catalog-list li:nth-of-type(4n+1) {
     margin-left: -13px;
 }
 
-.catalog-item:nth-of-type(4n+4) {
+.catalog-list li:nth-of-type(4n+4) {
     margin-right: -13px;
 }
 
@@ -755,12 +764,27 @@ input[type="radio"].visually-hidden {
     margin-bottom: 22px;
     margin-right: auto;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    /* transition: opasity .9s ease; не рабатает на появление кнопок товара*/
-
 }
 
 .catalog-item:hover .button-pointing {
     opacity: 100;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    width: 1146px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    padding-bottom: 14px;
+    margin-right: auto;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    color: #323232;
+    background-color: #ede1c7;
+    background-image: url("../img/about-us.jpg");
+    border-radius: 15px;
 }
 
 .about-us h2 {
@@ -768,32 +792,15 @@ input[type="radio"].visually-hidden {
     padding: 0px;
 }
 
-.about-us {
-    display: flex;
-    flex-direction: column;
-    width: 1146px;
-    min-height: 305px;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: normal;
-    margin-right: auto;
-    margin-top: -40px;
-    color: #323232;
-    background-color: #ede1c7;
-    background-image: url("../img/about-us.jpg");
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
 .about-us h2 {
     font-size: 24px;
     line-height: 30px;
-    font-weight: normal;
+    font-weight: 500;
     color: #323232;
-    padding-top: 27px;
+    padding-top: 25px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
 }
 
 .about-us-items {
@@ -802,15 +809,15 @@ input[type="radio"].visually-hidden {
     flex-wrap: wrap;
     justify-content: space-between;
 
-    padding-right: 34px;
+    padding-right: 24px;
     padding-left: 20px;
-    padding-bottom: 25px;
 }
 
 .about-us-items li {
     display: flex;
     flex-direction: row;
-    width: 531px;
+    width: 537px;
+    margin-bottom: 9px;
 }
 
 .about-us-items div {
@@ -823,7 +830,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about-us-items p {
-    padding-top: 15px;
+    padding-top: 13px;
 }
 
 .box-for-baners {
@@ -852,8 +859,8 @@ input[type="radio"].visually-hidden {
     line-height: 22px;
     font-weight: 400;
     color: #323232;
-    padding-top: 25px;
-    padding-left: 20px;
+    padding-top: 24px;
+    padding-left: 19px;
     padding-right: 20px;
     padding-bottom: 5px;
     background-color: #ffffff;
@@ -867,16 +874,17 @@ input[type="radio"].visually-hidden {
 
 .banner p {
     width: 293px;
-    margin-left: 20px;
+    margin-left: 19px;
+    margin-top: -1px;
 }
 
 .banner-info a {
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
+    text-decoration: underline;
     color: #323232;
     background: transparent;
-    border-bottom: 2px solid #323232;
 }
 
 .banner-info a:hover,
@@ -895,7 +903,7 @@ input[type="radio"].visually-hidden {
     margin-left: auto;
   
     background:
-        url("../img/post.svg") no-repeat,
+        url("../img/svg/bg-post.svg") no-repeat,
         repeating-linear-gradient(135deg,
         rgba(255,255,255,1) 0px, rgba(255,255,255,1) 7px,
         rgba(146,205,255,1) 7px, rgba(146,205,255,1) 14px,
@@ -913,15 +921,14 @@ input[type="radio"].visually-hidden {
 }
 
 .sign-up-text {
-    font-size: 16;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
     margin: 0;
-    margin-bottom: 31px;
+    margin-bottom: 36px;
     color: #5a5a5a;
 }
 
 .sign-up-form .form-input {
-
     width: 351px;
     height: 40px;
     padding-left: 14px;
@@ -943,7 +950,7 @@ input[type="radio"].visually-hidden {
 .map {
     margin-left: -27px;
 }
-/* как правильно сделать тень отметки на карте? */
+
 .our-contacts::before {
     position: absolute;
     content: "";
@@ -1039,7 +1046,6 @@ input[type="radio"].visually-hidden {
 .footer-page {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     min-height: 103px;
     background-color: transparent;
 }
@@ -1047,8 +1053,10 @@ input[type="radio"].visually-hidden {
 .foter-social {
     display: flex;
     justify-content: space-between;
-    width: 180px;
+    width: 179px;
     align-self: center;
+    margin-left: 4px;
+    margin-top: 4px;
 
 }
 
@@ -1057,7 +1065,7 @@ input[type="radio"].visually-hidden {
     width: 32px;
     height: 32px;
     border-radius: 32px;
-    box-shadow: 0 0 0 2px #c2cec7;
+    box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.5);
     transition: box-shadow .5s ease;
 }
 
@@ -1068,7 +1076,7 @@ input[type="radio"].visually-hidden {
 
 
 .social-button path {
-    fill: #e6ebe9;
+    fill: rgba(255, 255, 255, 0.7);
     transition: fill .5s ease;
 }
 
@@ -1077,8 +1085,17 @@ input[type="radio"].visually-hidden {
     fill: #ffffff;
 }
 
+.social-button:hover,
+.social-button:focus {
+    box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.7);
+}
+
 .social-button:active path {
-    fill: #e9e9e9;
+    fill: rgba(255, 255, 255, 0.9);
+}
+
+.social-button:active {
+    box-shadow: 0 0 0 2.5px rgba(255, 255, 255, 0.8);
 }
 
 .foter-about-company ul {
@@ -1091,18 +1108,33 @@ input[type="radio"].visually-hidden {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     width: 328px;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 217px;
+}
+
+.foter-about-company .heart-svg {
+    padding-top: 3px; 
+}
+
+.footer-column {
+    margin-left: 7px;
+    margin-right: 32px;
 }
 
 .about-company-item a {
     text-decoration: none;
     font-size: 13px;
     line-height: 18px;
-    color: #ffffff;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.about-company-item .bold {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .about-company-item a:hover,
@@ -1116,11 +1148,18 @@ input[type="radio"].visually-hidden {
     font-size: 12px;
     line-height: 18px;
     align-self: center;
+    margin-top: -2px;
+    margin-left: auto;
+    margin-bottom: 7px;
+    margin-right: -2px;
 }
 
 .made-in-htmlacademy p {
     margin: 0px;
     padding: 0px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: -1px;
+    margin-left: -1px;
 }
 
 .logo-htmlacademy:hover,
@@ -1129,7 +1168,7 @@ input[type="radio"].visually-hidden {
 }
 
 .link_htmlacademy {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -1168,7 +1207,8 @@ input[type="radio"].visually-hidden {
     border: 1px solid rgba(178,178,178,0.52);
 }
 
-/* - Стилизация страницы каталога - */
+/* - Стилизация страницы каталога ниже - */
+
 .catalog-page {
     background: linear-gradient(to bottom, #9db1a5 0%, #849d8f 40%);
 }
@@ -1207,6 +1247,7 @@ input[type="radio"].visually-hidden {
 
 .second-menu-list span {
     padding-top: 1px;
+    font-weight: 500;
 }
 
 .second-menu-list svg {
@@ -1214,7 +1255,8 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form svg {
-    margin: 0px;
+   margin-left: 5px;
+   margin-top: -1px;
 }
 
 .breadcrumbs {
@@ -1262,7 +1304,7 @@ input[type="radio"].visually-hidden {
     margin-top: 3px;
     background-image: url("../img/svg/double-right.svg");
 }
-/* - стилизация фильтров (начало) - */
+
 .filters h1,
 .filters h2,
 .filters ul  {
@@ -1295,7 +1337,6 @@ input[type="radio"].visually-hidden {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    display: relative;
     width: 896px;
     min-height: 135px;
     padding-bottom: 40px;
@@ -1475,11 +1516,9 @@ input[type="radio"].visually-hidden {
 }
 
 .for-cream {
+    display: flex;
     width: 702px;
-    height: 36px;
-    margin: 0;
-    padding: 0;
-
+    min-height: 36px;
     border-radius: 36px;
     border: none;
     background-color: rgba(255,255,255,0.2);
@@ -1488,7 +1527,23 @@ input[type="radio"].visually-hidden {
 .for-cream li {
     position: relative;
     display: inline-block;
-    top: 6px;
+    top: 7px;
+}
+
+.for-cream li:nth-child(2) {
+    padding-left: 6px;
+}
+
+.for-cream li:nth-child(3) {
+    padding-left: 6px;
+}
+
+.for-cream li:nth-child(4) {
+    padding-left: 11px;
+}
+
+.for-cream li:nth-child(5) {
+    padding-left: 6px;
 }
 
 .filter-input-checkbox + label {
@@ -1503,7 +1558,7 @@ input[type="radio"].visually-hidden {
     content: "";
     width: 20px;
     height: 20px;
-    left: 14px;
+    left: 15px;
     top: 0px;
     background-image: url("../img/svg/checkbox-off.svg");
     background-repeat: no-repeat;
@@ -1520,7 +1575,7 @@ input[type="radio"].visually-hidden {
     content: "";
     width: 24px;
     height: 20px;
-    left: 14px;
+    left: 15px;
     top: 0px;
     background-image: url("../img/svg/checkbox-on.svg");
     background-repeat: no-repeat;
@@ -1565,7 +1620,7 @@ input[type="radio"].visually-hidden {
     box-shadow: inset 0px 2px 2px 0px #696969;
     border: none;
 }
-/* - Стилизация фильров (конец) */
+
 .pagination-list {
     list-style: none;
     margin: 0;
@@ -1576,8 +1631,10 @@ input[type="radio"].visually-hidden {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
+    line-height: 18px;
     min-height: 110px;
-    max-width: 188px;
+    max-width: 190px;
     margin-left: auto;
 }
 
@@ -1608,6 +1665,7 @@ input[type="radio"].visually-hidden {
     align-items: center;
     width: 25px;
     height: 25px;
+    margin-top: -1px;
     color: #000000;
     background-color: #ffffff;
     border-radius: 25px;
@@ -1630,6 +1688,7 @@ input[type="radio"].visually-hidden {
 .pagination-item .pagination-next {
     width: 8px;
     height: 12px;
+    margin-left: 14px;
 }
 
 .pagination-item .pagination-next:hover,
@@ -1647,7 +1706,7 @@ input[type="radio"].visually-hidden {
     border-top: 1px solid rgba(255,255,255,0.3);
 }
 
-/* - Стилизация всплывающих окон - */
+/* - Стилизация всплывающих окон ниже - */
 
 .window {
     color: #323232;
@@ -1677,7 +1736,7 @@ input[type="radio"].visually-hidden {
     z-index: 1;
     transition: opacity .5s ease;
 }
-/* селектор не отрабатывает активность окна логина*/
+
 .second-menu-list .toggle-login {
     padding: 0px 0px 5px 0px;
     position: relative;
@@ -1713,7 +1772,6 @@ input[type="radio"].visually-hidden {
     padding: 0px;
     margin: 0px;
     margin-left: 20px;
-    border-radius: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
 }
@@ -1823,7 +1881,7 @@ input[type="radio"].visually-hidden {
     text-align: center;
 }
 
-.icon-basket {
+.icon-item-basket {
     border-radius: 50%;
     vertical-align: middle;
 }
@@ -1884,10 +1942,6 @@ input[type="radio"].visually-hidden {
     border-radius: 10px;
     transform: translateX(-50%);
     z-index: 999;
-}
-
-.feedback-button:hover .modal-feedback {
-    display: block;
 }
 
 .feedback-form {
