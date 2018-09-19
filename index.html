@@ -271,7 +271,7 @@
                 <p>Для заказов по телефону:</p>
                 <p>8 812 450-25-25</p>
                 <p>(с 10 до 20 ежедневно)</p>
-                <button class="button feedback-button" type="submit">
+                <button class="button feedback-button" type="submit" aria-placeholder="">
                   Форма обратной связи
                 </button>
               </div>
@@ -336,7 +336,7 @@
           <section class="window modal-feedback">
             <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
               <h2 class="visually-hidden">Форма обратной связи</h2>
-              <p>Мы обязательно вам отвеетим!</p>
+              <h3>Мы обязательно вам ответим!</h3>
               <p>
                 <label class="visually-hidden" for="name-feedback">Введите свое имя</label>
                 <input class="input modal-feedback-name" type="text" name="name-feedback" id="name-feedback" placeholder="Как вас зовут?" autocomplete="on">
@@ -350,6 +350,7 @@
                 <textarea class="input modal-feedback-text" name="text-feedback" id="text-feedback" placeholder="Напишите что нибудь..." autocomplete="on" rows="5"></textarea>
               </p>
               <button class="button button-feedback" type="button">Отправить</button>
+              <button class="button-feedback-close" type="button">Закрыть</button>
             </form>
           </section>
 
