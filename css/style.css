@@ -173,7 +173,6 @@ input[type="radio"].visually-hidden {
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     border-radius: 5px;
     background-color: #f8f7f4;
-    transition: display .5s ease;
     /* transition не хочет отрабатывать для display, а если задать opacity что бы отрабатывало то выпадашка появляется раньше времени */
 }
 
@@ -374,18 +373,15 @@ input[type="radio"].visually-hidden {
     border: none;
 
     cursor: pointer;
-    transition: color .5s ease, background-color .5s ease;
 }
 
 .button:hover,
 .button:focus {
-    outline: none;
     color: #ffffff;
     text-shadow: 0px 2px 5px rgb(160, 32, 11);
     background: #ef7762;
     box-shadow: 0 1px 1px 1px #ac1000;
     border: none;
-    transition: background-color .4s ease;
 }
 
 .button:active {
@@ -488,7 +484,7 @@ input[type="radio"].visually-hidden {
     background-color: #9d8b84;
     background-image: url("../img/ice-cream-slide3.png");
 }
-/* не получается задать селекторы классами - не работает слайдер. Как сделать что бы кнопки слайдеров выделялись табом?*/
+
 .product-1:checked ~ .site-wrapper .slide-1,
 .product-2:checked ~ .site-wrapper .slide-2,
 .product-3:checked ~ .site-wrapper .slide-3 {
@@ -1666,7 +1662,7 @@ input[type="radio"].visually-hidden {
 }
 
 .login-window {
-    opacity: 0;
+    display: none;
     position: absolute;
     width: 241px;
     height: 172px;
@@ -1682,14 +1678,13 @@ input[type="radio"].visually-hidden {
     transition: opacity .5s ease;
 }
 /* селектор не отрабатывает активность окна логина*/
-.login-form .toggle-login {
-    padding: 0px 0px 11px 0px;
+.second-menu-list .toggle-login {
+    padding: 0px 0px 5px 0px;
     position: relative;
 }
 
-/* Это два селектора? или уже вложеностью три? */
-.main-header .login-link:hover ~ .login-window {
-    opacity: 1;
+.login-form:hover .login-window {
+    display: block;
 }
 
 .login-enter {
@@ -1753,16 +1748,24 @@ input[type="radio"].visually-hidden {
     border-radius: 10px;
 }
 
+.search-form {
+    position: relative;
+}
+
 .search-window {
     display: none;
     position: absolute;
     width: 341px;
     height: 84px;
-    margin-top: -2350px;
-    margin-left: 593px;
+    top: 36px;
+    left: -300px;
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
     z-index: 999;
+}
+
+.search-form:hover .search-window {
+    display: block;
 }
 
 .search-input {
@@ -1774,17 +1777,105 @@ input[type="radio"].visually-hidden {
     margin-top: 18px;
 }
 
-.modal-basket{
+.basket-form-catalog {
+    position: relative;
+}
+
+.basket-window {
     display: none;
     position: absolute;
-    width: 540px;
-    height: 242px;
-    margin-top: -1591px;
-    margin-left: 633px;
+    width: 510px;
+    height: 232px;
+    top: 36px;
+    left: -414px;
+    padding-left: 16px;
+    padding-right: 14px;
+    padding-top: 10px;
     border-radius: 5px;
     box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.basket-form-catalog:hover .basket-window {
+    display: block;
+}
+
+.basket-catalog-info {
+    display: table;
+    font-size: 13px;
+    line-height: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #cacac7;
+}
+
+.basket-catalog-info ul {
+    display: table-row;
+    height: 53px;
+}
+
+.basket-catalog-info li {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.basket-catalog-info .item-close {
+    width: 11px;
+    height: 11px;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../img/svg/cross-big.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.basket-catalog-info li:nth-child(2) {
+    width: 61px;
+    text-align: center;
+}
+
+.icon-basket {
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.basket-catalog-info li:nth-child(3) {
+    width: 220px;
+    padding-top: 2px;
+}
+
+.basket-catalog-info li:nth-child(4) {
+    width: 123px;
+    padding-left: 27px;
+}
+
+.basket-item .item-name {
+    vertical-align: bottom;
+    padding-bottom: 2px;
+}
+
+.basket-catalog-info li:last-child {
+    width: 67px;
 }
 
 .cost-total {
-    align-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cost-total p {
+    margin: 0px;
+    padding: 0px;
+    margin-right: -2px;
+    margin-top: 15px;
+    margin-bottom: 13px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.basket-window .basket-button {
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
 }
