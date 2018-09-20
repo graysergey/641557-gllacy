@@ -5,7 +5,7 @@
     <title>HTML Academy: Глейси</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style-min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body class="catalog-page">
     <div class="page-alignment">
@@ -124,17 +124,17 @@
           <h1>Сливочное мороженое</h1>
           <form class="form-filters" action="https://echo.htmlacademy.ru" method="post">
             <h2 class="visually-hidden">Сортировка мороженного по параметрам</h2>
-            <fieldset>
-              <legend>Сортировка:</legend>
-                <div class="box-for-row">
-                  <select class="sorting" name="sorting-popular" id="filter-sorting"> 
-                    <option value="По популярности">по популярности</option>
-                    <option value="По популярности">сначала не дорогие</option>
-                    <option value="По популярности">сначала дорогие</option>
-                    <option value="По популярности">по жирности</option>
-                  </select>
-                  <label for="filter-sorting"></label>
-                </div>
+            <fieldset class="filter-sorting">
+              <legend class="filter-title">Сортировка:</legend>
+              <div class="filter-layout flex-center">
+                <select id="sorting">
+                  <option selected>по популярности</option>
+                  <option >сначала недорогие</option>
+                  <option >сначала дорогие</option>
+                  <option >по жирности</option>
+                </select>
+                <label for="sorting"></label>
+              </div>
             </fieldset>
             <fieldset>
               <legend>Цена: 100 руб. – 500 руб.</legend>

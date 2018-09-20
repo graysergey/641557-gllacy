@@ -1597,7 +1597,7 @@ input[type="radio"].visually-hidden {
     border-color: #000000;
 }
 
-.box-for-row label[for="filter-sorting"] {
+label[for="sorting"] {
     width: 0px;
     height: 0px;
 
@@ -1622,6 +1622,66 @@ input[type="radio"].visually-hidden {
     border-top: 10px solid #000000;
 }
 
+.filter-sorting .filter-layout {
+    width: 194px;
+    color: #ffffff;
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease;
+}
+
+.filter-sorting .filter-layout:hover {
+    color: #323232;
+}
+
+.filter-layout:hover label[for="sorting"] {
+    border-top: 9px solid #323232;
+}
+
+.filter-sorting select {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  
+    width: 100%;
+    padding-left: 11px;
+  
+    z-index: 1;
+  
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  
+    background-color: transparent;
+    border: none;
+}
+
+.filter-sorting label[for="sorting"] {
+    width: 0px;
+    height: 0px;
+  
+    position: relative;
+    top: 3px;
+    right: 16px;
+  
+    border: 5px solid #ffffff;
+    border-top: 9px solid #ffffff;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  
+    -webkit-transition: border-color .25s ease;
+  
+    -o-transition: border-color .25s ease;
+  
+    transition: border-color .25s ease;
+}
+.filter-sorting select::-ms-expand {
+    display: none;
+}
+  
 .range-controls {
     position: relative;
     width: 176px;
