@@ -1567,6 +1567,7 @@ input[type="radio"].visually-hidden {
 
 .box-for-row {
     width: 193px;
+    position: relative;
 }
 
 .sorting {
@@ -1597,13 +1598,13 @@ input[type="radio"].visually-hidden {
     border-color: #000000;
 }
 
-.box-for-row label[for="filter-sorting"] {
+.box-for-row label[for="sorting"] {
     width: 0px;
     height: 0px;
 
-    position: relative;
-    top: -12px;
-    right: -169px;
+    position: absolute;
+    top: 40%;
+    right: 14px;
 
     border: 5px solid #ffffff;
     border-top: 10px solid #ffffff;
@@ -1618,7 +1619,7 @@ input[type="radio"].visually-hidden {
     transition: border-color .5s ease;
 }
 
-.box-for-row:hover label[for="filter-sorting"] {
+.box-for-row:hover label[for="sorting"] {
     border-top: 10px solid #000000;
 }
 
