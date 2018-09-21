@@ -355,14 +355,8 @@ input[type="radio"].visually-hidden {
   background-color: #f8f7f4;
 }
 
-.search-form a:hover path,
-.search-form a:focus path,
-.login-form a:hover path,
-.login-form a:focus path,
-.basket-form a:hover path,
-.basket-form a:focus path,
-.second-menu a:hover circle,
-.second-menu a:focus circle {
+.for-focus:hover path,
+.for-focus:focus path {
   fill: #000000;
   -webkit-transition: fill .5s ease-in-out;
   -o-transition: fill .5s ease-in-out;
