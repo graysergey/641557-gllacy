@@ -1392,7 +1392,7 @@ input[type="radio"].visually-hidden {
   font: inherit;
   background-color: #ffffff;
 
-  border: 1px solid rgba(178,178,178,0.52);
+  border: 1px solid #8fbdec;
 }
 
 /* - Стилизация страницы каталога ниже - */
@@ -2208,7 +2208,7 @@ input[type="radio"].visually-hidden {
 }
 
 .modal-feedback {
-  display: none;
+  display: block;
   position: fixed;
   width: 429px;
   height: 398px;
@@ -2223,6 +2223,10 @@ input[type="radio"].visually-hidden {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 999;
+}
+
+.input:focus {
+  border: 1px solid #8fbdec;
 }
 
 .feedback-form {
