@@ -790,7 +790,7 @@ input[type="radio"].visually-hidden {
   margin-right: -13px;
 }
 
-.catalog-item {
+.hit-img {
   position: relative;
 }
 
@@ -885,13 +885,15 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
-  padding-left: 17px;
-  padding-right: 17px;
+  align-self: center;
+  padding-left: 27px;
+  padding-right: 27px;
+  padding-top: 11px;
+  padding-bottom: 11px;
   margin-top: auto;
-  margin-left: auto;
   margin-bottom: 22px;
-  margin-right: auto;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+  z-index: 1;
 }
 
 .catalog-item:hover .button-pointing {
@@ -1105,9 +1107,9 @@ input[type="radio"].visually-hidden {
 }
 
 .email-button {
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 8px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -1308,8 +1310,7 @@ input[type="radio"].visually-hidden {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 328px;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 30px;
   margin-left: 217px;
 }
 
@@ -1937,7 +1938,6 @@ input[type="radio"].visually-hidden {
   align-items: center;
   width: 25px;
   height: 25px;
-  margin-top: -1px;
   color: #000000;
   background-color: #ffffff;
   border-radius: 25px;
