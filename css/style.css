@@ -814,10 +814,6 @@ input[type="radio"].visually-hidden {
   position: relative;
 }
 
-.hit-img {
-  position: relative;
-}
-
 .hit-img::after {
   content: "";
   position: absolute;
