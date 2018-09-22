@@ -790,10 +790,6 @@ input[type="radio"].visually-hidden {
   margin-right: -13px;
 }
 
-.hit-img {
-  position: relative;
-}
-
 .catalog-item-image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -812,6 +808,14 @@ input[type="radio"].visually-hidden {
   align-content: center;
   border: none;
   border-radius: 50%;
+}
+
+.catalog-item {
+  position: relative;
+}
+
+.hit-img {
+  position: relative;
 }
 
 .hit-img::after {
