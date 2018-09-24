@@ -624,6 +624,7 @@ input[type="radio"].visually-hidden {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 560px;
+  min-height: 229px;
   background-image: url("../img/crimson-background.jpg");
   border: none;
   border-radius: 14px;
@@ -671,6 +672,7 @@ input[type="radio"].visually-hidden {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 560px;
+  min-height: 229px;
   margin-left: auto;
   background-image: url("../img/chocolate-background.jpg");
   border: none;
@@ -813,6 +815,11 @@ input[type="radio"].visually-hidden {
 
 .catalog-item {
   position: relative;
+}
+
+.catalog-list .main-size-item {
+  width: 293px;
+  min-height: 405px;
 }
 
 .hit-img::after {
