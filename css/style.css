@@ -853,8 +853,8 @@ input[type="radio"].visually-hidden {
 .info-item {
   max-width: 255px;
   margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 18px;
+  margin-right: 18px;
 }
 
 .info-item a {
